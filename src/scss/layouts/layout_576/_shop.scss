@@ -1,0 +1,25 @@
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 45px;
+  grid-column-gap: 57px;
+}
+.post__img-box {
+  padding-bottom: 70%;
+  @include m(slider) {
+    max-width: 100%;
+    height: 395px;
+    padding-bottom: 0;
+  }
+}
+.post__img-box_slider {
+  padding-bottom: 46%;
+  height: 50%;
+}
+.post {
+  @include e(title) {
+    @include m(slider) {
+      @include font('DM Sans', 38px, $regularFontWeight);
+    }
+  }
+}

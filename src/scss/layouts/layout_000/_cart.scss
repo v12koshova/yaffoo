@@ -1,0 +1,206 @@
+.coupon {
+  background: #fbf7ed;
+  padding: 25px 25px 25px 70px;
+  text-align: left;
+  margin-bottom: 36px;
+  // display: none;
+  height: 45px;
+  @include e(span) {
+    position: relative;
+    margin-left: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+    @include m(success) {
+      &::before {
+        content: '';
+        position: absolute;
+        background: url(../i/done.svg) no-repeat center center;
+        width: 35px;
+        height: 35px;
+        background-position: center;
+        background-size: contain;
+        margin-left: -60px;
+        top: 0;
+      }
+    }
+    @include m(error) {
+      &::before {
+        content: '';
+        position: absolute;
+        background: url(../i/error.svg) no-repeat;
+        width: 35px;
+        height: 35px;
+        background-position: center;
+        background-size: contain;
+        margin-left: -60px;
+        top: 0;
+      }
+    }
+  }
+}
+.cart-item {
+  @include m(page) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid $border;
+    margin-bottom: 10px;
+    padding-right: 20px;
+  }
+  @include e(element) {
+    justify-self: end;
+    @include m(designation) {
+      grid-column: 1;
+      justify-self: start;
+      font-weight: 700;
+      padding: 20px;
+      margin: 0;
+      @include font('DM Sans', 19px, $boldFontWeight);
+    }
+    @include m(quantity-page) {
+      width: 40%;
+      text-align: center;
+      align-self: center;
+      display: flex;
+      justify-content: space-between
+    }
+    @include m(remove-page) {
+      border: none;
+      background: transparent;
+    }
+    @include m(title-page) {
+      text-align: right;
+    }
+  }
+}
+.navigation {
+  margin-top: 20px;
+  margin-bottom: 60px;
+  @include font('DM Sans', 12px, $regularFontWeight, $grey);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  @include m(link) {
+    text-decoration: none;
+    color: $navDropdown-element;
+  }
+}
+
+.cart-table__body-item_remove-page {
+  border: none;
+  background: transparent;
+}
+.cart-table {
+  @include e(item) {
+    padding: 11px;
+    margin-bottom: 10px;
+  }
+  @include e(button) {
+    display: contents;
+  }
+  @include e(btn) {
+    background: $green;
+    text-transform: uppercase;
+    border: none;
+    padding: 14px;
+    letter-spacing: 0.1em;
+    line-height: 1.5em;
+    @include font('DM Sans', 13px, $mediumFontWeight, $white);
+    @include m(checkout) {
+      margin-top: 40px;
+      grid-column: 1 / -1;
+    }
+  }
+  @include e(footer) {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $border;
+    padding: 20px;
+  }
+  @include e(form) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  @include e(head) {
+    display: none;
+  }
+  @include e(val-block) {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include font('DM Sans', 19px, $regularFontWeight, $tags);
+    @include m(title) {
+      display: block;
+      text-align: left;
+      padding-left: 20px;
+      grid-column: 1 / span 3;
+      margin-bottom: 0;
+      padding-bottom: 20px;
+      @include font('DM Sans', 27px, $mediumFontWeight, $tags);
+    }
+    @include m(container) {
+      display: contents;
+    }
+  }
+  @include e(component) {
+    display: contents;
+  }
+  @include e(notice) {
+    grid-column: 1 / -2;
+    background: #fbf7ed;
+    padding: 40px 25px 40px 100px;
+    text-align: left;
+    @include font('Source Serif Pro', 19px, $regularFontWeight, $tags);
+    margin-bottom: 36px;
+    height: 20px;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      background: url(../i/notification.svg) no-repeat;
+      width: 35px;
+      height: 35px;
+      background-position: center;
+      background-size: contain;
+      margin-left: -60px;
+      top: 34px;
+    }
+  }
+  @include e(btn) {
+    @include m(notice) {
+      grid-column: 1 / 3;
+    }
+  }
+}
+.cart-total {
+  grid-column: 1 / span 2;
+  @include font('DM Sans', 35px, $mediumFontWeight);
+  margin: 25px 0 15px 0;
+  padding-left: 10px;
+}
+
+.cart-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.cost-box {
+  display: contents;
+  @include e(element) {
+    border-bottom: 1px solid $border;
+    border-top: 1px solid $border;
+    padding: 20px 30px;
+    margin: 0;
+    @include m(span) {
+      grid-column: 1;
+      border-left: 1px solid $border;
+      text-align: left;
+      border-bottom: 1px solid  $border;
+    }
+    @include m(price) {
+      border-right: 1px solid $border;
+    }
+    @include m(price-total) {
+      font-weight: bold;
+      border-bottom: 1px solid $border;
+    }
+  }
+}

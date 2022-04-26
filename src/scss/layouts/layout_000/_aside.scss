@@ -1,0 +1,141 @@
+.sidebar {
+  text-align: center;
+  margin-top: 50px;
+  @include e(title) {
+    @include font('DM Sans', 14px, $mediumFontWeight);
+    text-transform: uppercase;
+    position: relative;
+    margin: 0 0 30px 0;
+    padding: 0 calc(10px + 2%);
+    &::before {
+      content: '';
+      position: absolute;
+      border-bottom: 1px solid $border;
+      width: 50%;
+      left: 5px;
+      top: 9px;
+      z-index: -1;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      border-bottom: 1px solid $border;
+      width: 50%;
+      right: 5px;
+      top: 9px;
+      z-index: -1;
+    }
+  }
+  @include e(title-span) {
+    padding: 0 calc(5px + 2%);
+    z-index: 1;
+    background-color: $white;
+  }
+  @include e(social) {
+    margin-bottom: 55px;
+  }
+  @include e(popular) {
+    margin-bottom: 55px;
+  }
+  @include e(featured) {
+    margin-bottom: 55px;
+  }
+  @include e(subscribe) {
+    margin-bottom: 55px;
+  }
+  @include e(tags) {
+    margin-bottom: 55px;
+  }
+  @include e(banner) {
+    margin-bottom: 50px;
+  }
+  @include e(most-popular-posts) {
+    margin-top: 60px;
+  }
+}
+img {
+  max-width: 100%;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 55px;
+  @include e(me) {
+    @include font('DM Sans', 27px, $regularFontWeight);
+    margin: 0;
+  }
+  @include e(proffesion) {
+    text-transform: uppercase;
+    line-height: 1.5em;
+    letter-spacing: 0.1em;
+    margin-top: 5px;
+    @include font('DM Sans', 12px, $regularFontWeight, $tags);
+  }
+  @include e(description) {
+    @include font('Source Serif Pro', 19px, $regularFontWeight, $tags);
+    line-height: 1.6em;
+    letter-spacing: 0px;
+    margin: 5px 0 20px 0;
+  }
+  @include e(img-box) {
+    margin-top: 30px;
+    margin-bottom: 25px;
+    @include m(my-photo) {
+      order: -1;
+    }
+    @include m(my-signature) {
+      margin: 0;
+    }
+  }
+}
+.icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 30px;
+  @include e(link) {
+    @include font('DM Sans', 10px, $regularFontWeight);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    position: relative;
+  }
+}
+.post {
+  @include e(tag) {
+    cursor: pointer;
+    @include m(aside) {
+      margin-right: 20px;
+      margin-bottom: 8px;
+    }
+  }
+}
+// .subscribe {
+//   background: $bg;
+//   padding: 35px 25px;
+//   @include e(title) {
+//     @include font('DM Sans', 26px, $regularFontWeight);
+//   }
+//   @include e(description) {
+//     @include font('Source Serif Pro', 18px, $regularFontWeight);
+//     line-height: 1.6em;
+//   }
+//   @include e(form) {
+//     @include font('Source Serif Pro', 18px, $regularFontWeight, $white);
+//     line-height: 1.6em;
+//     width: 100%;
+//     max-width: 250px;
+//     padding: 10px 0 10px 0;
+//     margin: 10px;
+//   }
+//   @include e(btn) {
+//     @include font('Source Serif Pro', 18px, $regularFontWeight, $white);
+//     line-height: 1.6em;
+//     background: $green;
+//     text-transform: uppercase;
+//     width: 100%;
+//     max-width: 250px;
+//     padding: 10px 0 10px 0;
+//     margin: 10px;
+//   }
+// }

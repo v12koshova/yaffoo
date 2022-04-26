@@ -1,0 +1,22 @@
+.post {
+  max-width: 100%;
+  @include e(share) {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    color: $grey;
+  }
+  @include e(share-icons) {
+    position: relative;
+    margin-left: 30px;
+    &::before {
+      content: '—';
+      position: absolute;
+      right: 115px;
+    }
+    @include m(icon) {
+      color: $black;
+      padding: 0 10px;
+    }
+  }
+}

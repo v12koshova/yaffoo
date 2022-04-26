@@ -1,0 +1,17 @@
+.form__input {
+  @include m(menu) {
+    max-width: 100%;
+    position: relative;
+    vertical-align: middle;
+    top: 50%;
+  }
+}
+.form__btn {
+  @include m(menu) {
+    position: absolute;
+    width: 125px;
+    padding: 0;
+    right: 10px;
+    margin-top: 18px;
+  }
+}

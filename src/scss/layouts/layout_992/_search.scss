@@ -1,0 +1,16 @@
+.post {
+  @include e(title) {
+    @include m(search) {
+      margin-left: 8%;
+    }
+    @include m(user-value) {
+      margin-top: 1px;
+      margin-left: 0;
+    }
+  }
+  @include e(img) {
+    @include m(search) {
+      left: 6%;
+    }
+  }
+}

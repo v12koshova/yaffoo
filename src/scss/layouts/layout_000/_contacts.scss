@@ -1,0 +1,80 @@
+// .wrapper {
+// @include m(contacts) {
+//   display: flex;
+//   flex-direction: column;
+// }
+// }
+
+.contacts {
+  @include e(title) {
+    @include font('DM Sans', 40px, $mediumFontWeight);
+    line-height: 1.4em;
+    margin-top: 10px;
+  }
+  @include e(text) {
+    @include font('Source Serif Pro', 19px, $regularFontWeight, $tags);
+    line-height: 1.6em;
+    text-align: start;
+  }
+  @include e(img-box) {
+    order: -1;
+  }
+
+  @include e(form-warning) {
+    color: red;
+    @include m(bottom) {
+      border: 1px solid red;
+      padding: 20px;
+    }
+  }
+  @include e(form-input) {
+    width: 100%;
+    min-height: 60px;
+    padding: 0 20px;
+    margin-top: 13px;
+    border: 1px solid $border;
+    box-sizing: border-box;
+    @include m(textarea) {
+      resize: vertical;
+      padding: 10px;
+      @include font('DM Sans', 16px, $regularFontWeight);
+    }
+  }
+  @include e(form-item) {
+    margin-bottom: 13px;
+    text-align: left;
+  }
+  @include e(form-btn) {
+    padding: 10px 32px;
+    border: 1px solid $border;
+    background: $bg;
+    text-transform: uppercase;
+    @include font('DM Sans', 13px, $regularFontWeight, $black);
+    line-height: 1.5em;
+  }
+  @include e(form-label) {
+    width: 100%;
+    @include font('DM Sans', 16px, $regularFontWeight, $tags);
+  }
+}
+.modal {
+  opacity: 0;
+  display: none;
+  width: 100%;
+  background: $bg;
+  box-sizing: border-box;
+  padding: 20px;
+  grid-area: post;
+  @include font('Source Serif Pro', 19px, $regularFontWeight, $tags);
+  @include m(active) {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+  }
+  @include e(button) {
+    color: $tags;
+    text-decoration: underline;
+    background: none;
+    border: none;
+  }
+}

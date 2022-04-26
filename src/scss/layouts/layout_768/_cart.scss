@@ -1,0 +1,181 @@
+.coupon {
+  @include e(span) {
+    @include m(success) {
+      &::before {
+        top: -10px;
+      }
+    }
+    @include m(error) {
+      &::before {
+        top: -10px;
+      }
+    }
+  }
+}
+
+.cart-table {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 20px repeat(5, 1fr);
+  align-items: center;
+  @include e(head) {
+    display: contents;
+  }
+  @include e(footer) {
+    display: contents;
+  }
+  @include e(form) {
+    display: contents;
+  }
+  @include e(item) {
+    grid-column: 1 / span 2;
+    margin-bottom: 0;
+  }
+
+  @include e(btn) {
+    padding: 10px;
+    border-top: 2px solid $green;
+    border-bottom: 2px solid $green;
+    @include m(total) {
+      grid-column: 1 / -1;
+    }
+    @include m(form) {
+      grid-column: 3;
+    }
+    @include m(update) {
+      grid-column: -2;
+    }
+  }
+  @include e(head-item) {
+    background: $navDropdown-element;
+    @include font('DM Sans', 19px, $mediumFontWeight, $white);
+    padding: 20px 0 20px 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    @include m(product) {
+      grid-column: 1 / span 3;
+    }
+  }
+  @include e(body) {
+    display: contents;
+    margin-top: 65px;
+  }
+  @include e(val-block) {
+    display: contents;
+    @include m(title) {
+      display: block;
+    }
+  }
+}
+.cart-total {
+  grid-column: 1 / span 3;
+  margin: 5px 0 10px 0;
+  border-top: 1px solid $border;
+}
+.cost-box {
+  display: contents;
+  @include e(element) {
+    @include m(span) {
+      grid-column: 1 / 5;
+      margin: 0;
+    }
+    @include m(price) {
+      grid-column: 5 / 7;
+      margin: 0;
+      border-right: 1px solid $border;
+      text-align: left;
+    }
+  }
+}
+// .cost-box__subtotal {
+//   display: grid;
+//   grid-column: 1 / -1;
+//   @include m(span) {
+//     grid-column: 1 / span 2;
+//     grid-row: auto;
+//   }
+//   @include m(price) {
+//     grid-column: 3 / -1;
+//   }
+// }
+.cart-buttons {
+  margin-bottom: 10px;
+}
+.cost-box__total {
+  display: grid;
+  grid-column: 1 / -1;
+  @include m(span) {
+    grid-column: 1 / span 2;
+  }
+  @include m(price) {
+    grid-column: 3 / -1;
+  }
+}
+.cost-box__subtotal {
+  display: grid;
+  grid-column: 1 / -1;
+  @include m(span) {
+    grid-column: 1 / span 2;
+  }
+  @include m(price) {
+    grid-column: 3 / -1;
+  }
+}
+// .cart-items {
+//   @include e(page) {
+//     display: flex;
+//   }
+// }
+.cart-item {
+  text-align: center;
+  border-bottom: 1px solid $border;
+  &:last-of-type {
+    border-bottom: none;
+  }
+  grid-template-columns: 0.5fr 1fr 1fr;
+  grid-column-gap: 2px;
+  @include m(page) {
+    display: contents;
+    margin: 20px 0 20px 0;
+    border-bottom: 1px solid $grey;
+  }
+
+  @include e(element) {
+    justify-self: center;
+    @include m(remove) {
+      padding-left: 10px;
+    }
+    @include m(remove-page) {
+      cursor: pointer;
+      padding: 0 0 0 18px;
+      grid-column: 1;
+    }
+    @include m(img-box-page) {
+      grid-column: 2;
+    }
+    @include m(img-box) {
+      padding-top: 10px;
+    }
+    @include m(title-page) {
+      grid-column: 3;
+      text-align: left;
+    }
+    @include m(price-page) {
+      grid-column: 4;
+    }
+    @include m(page) {
+      margin: 10px 0;
+    }
+  }
+}
+.cart-page {
+  @include e(title) {
+    @include font('DM Sans', 48px, $regularFontWeight);
+    margin-bottom: 0;
+    line-height: 1.2em;
+  }
+}
+.cost-box {
+  border: 1px solid $black;
+  display: contents;
+}

@@ -1,0 +1,48 @@
+.cookie {
+  padding: 40px 20px;
+  max-width: 295px;
+  background: $bg;
+  margin: auto;
+  transform: translateY(15px);
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 60vh;
+  left: 0;
+  @include e(btn) {
+    background: $yellow;
+    border: none;
+    border-radius: 3px;
+    padding: 15px 0;
+    max-width: 100%;
+    width: 100%;
+    text-transform: uppercase;
+    @include font('DM Sans', 11px, $mediumFontWeight);
+    letter-spacing: 0.1em;
+  }
+  @include e(text) {
+    @include font('DM Sans', 16px, $regularFontWeight, $navDropdown-element);
+    letter-spacing: normal;
+    line-height: 1.5em;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  @include e(close) {
+    align-self: flex-end;
+    display: flex;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    ::before {
+      content: '';
+      color: $grey;
+      position: absolute;
+      background-image: url('../i/close.svg');
+      width: 20px;
+      height: 20px;
+      background-size: contain;
+    }
+  }
+}

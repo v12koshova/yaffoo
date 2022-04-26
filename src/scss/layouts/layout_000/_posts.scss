@@ -1,0 +1,238 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 700px;
+  width: 100%;
+  height: 100%;
+  @include m(slider) {
+    margin: auto;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  @include e(title) {
+    @include font('DM Sans', 27px, $regularFontWeight);
+    margin-top: 15px;
+    margin-bottom: 10px;
+    @include m(slider) {
+      margin-top: 0;
+      margin-bottom: 0;
+      max-width: 90%;
+      @include font('DM Sans', 28px, $regularFontWeight);
+    }
+    @include m(sidebar) {
+      @include font('DM Sans', 17px, $regularFontWeight);
+      grid-row: 2;
+      justify-self: start;
+      text-align: left;
+      margin: 0;
+      &-products {
+        grid-row: 2px;
+      }
+    }
+  }
+  @include e(content) {
+    @include font('Source Serif Pro', 19px, $regularFontWeight, $tags);
+    line-height: 1.6em;
+    text-align: left;
+    order: 2;
+    margin-top: 25px;
+  }
+  @include e(buttons) {
+    order: 3;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  @include e(btn) {
+    padding: 10px 25px;
+    text-transform: uppercase;
+    @include font('DM Sans', 13px, $mediumFontWeight);
+    letter-spacing: 0.1em;
+    line-height: 1.5em;
+    background: $bg;
+  }
+  @include e(share) {
+    display: none;
+  }
+  @include e(img-box) {
+    order: -2;
+    max-width: 700px;
+    height: 0;
+    width: 100%;
+    position: relative;
+    padding-bottom: 80%;
+    margin-bottom: 20px;
+    @include m(slider1) {
+      background-image: url(../i/table.jpg);
+      width: 100%;
+      background-position: center center;
+      background-size: cover;
+    }
+    @include m(slider2) {
+      background-image: url(../i/house.jpg);
+      width: 100%;
+      background-position: center center;
+      background-size: cover;
+    }
+    @include m(slider3) {
+      background-image: url(../i/girlwithplant2.jpg);
+      width: 100%;
+      background-position: center center;
+      background-size: cover;
+    }
+    @include m(sidebar) {
+      grid-column: 2;
+      grid-row: 1 / 3;
+      max-width: 90px;
+    }
+  }
+  @include e(img) {
+    width: 100%;
+    height: 100%;
+    max-height: 505px;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    @include m(sidebar) {
+      max-width: 90px;
+      max-height: 90px;
+      position: relative;
+      width: 90px;
+      height: 90px;
+    }
+  }
+  @include e(view) {
+    @include m(sidebar) {
+      grid-row: 1;
+      justify-self: start;
+      margin: 0;
+      color: $grey;
+      &-products {
+        grid-row: 2px;
+      }
+    }
+  }
+  @include e(video-box) {
+    margin-top: 30px;
+    width: 100%;
+    max-height: 1050px;
+    position: relative;
+    padding: 0 0 120% 0;
+    order: 1;
+    & video {
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      max-height: 1050px;
+    }
+  }
+  @include e(description) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 60%;
+    margin: auto;
+    background: $white;
+    margin-top: -95px;
+    z-index: 1;
+    @include m(slider) {
+      padding: 30px;
+    }
+  }
+  @include e(tag-link) {
+    // order: -1;
+  }
+  @include e(tag) {
+    @include font('DM Sans', 12px, $regularFontWeight, $tags);
+    border-bottom: 1px solid $yellow;
+    order: -1;
+    display: inline-block;
+    padding-bottom: 3px;
+    width: fit-content;
+    text-transform: uppercase;
+    margin: 0;
+    @include m(slider) {
+      order: -1;
+      margin-top: 15px;
+    }
+  }
+  @include e(time) {
+    margin-bottom: 0;
+  }
+  @include e(date) {
+    margin-bottom: 0;
+  }
+  @include e(breadcrumbs) {
+    display: flex;
+    justify-content: center;
+    @include font('DM Sans', 12px, $regularFontWeight, $grey);
+    text-transform: uppercase;
+    @include m(slider) {
+      margin-top: 20px;
+    }
+  }
+  @include e(date) {
+    position: relative;
+    margin-left: 30px;
+    &::before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 20px;
+      background-color: $grey;
+      left: -25px;
+      top: 7px;
+    }
+  }
+}
+.posts {
+  display: grid;
+  grid-row-gap: 60px;
+  margin-top: 60px;
+  justify-items: center;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  @include e(btn) {
+    @include font('DM Sans', 11px, $mediumFontWeight, $white);
+    background: $green;
+    border: none;
+    border-radius: 3px;
+    padding: 13px 31px;
+    text-transform: uppercase;
+    margin: 50px 0 0 0;
+    cursor: pointer;
+  }
+  @include m(sidebar) {
+    grid-template-columns: 1fr 90px;
+    grid-template-rows: auto 0.5fr;
+    grid-gap: 0;
+    padding: 8px;
+    margin: 0;
+  }
+}
+.remove {
+  display: none;
+}
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.desc {
+  display: grid;
+  grid-row-gap: 25px;
+  margin-top: 30px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 700px));
+}
+.card {
+  @include e(img) {
+    height: 100%;
+  }
+}

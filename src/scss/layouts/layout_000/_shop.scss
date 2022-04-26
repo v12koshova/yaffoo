@@ -1,0 +1,106 @@
+.product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 30px;
+  @include e(title) {
+    @include font('DM Sans', 22px, $regularFontWeight);
+    line-height: 1em;
+    margin-bottom: 10px;
+    @include m(empty) {
+      margin-bottom: 20px;
+    }
+  }
+  @include e(price) {
+    @include font('DM Sans', 12px, $regularFontWeight, $grey);
+    line-height: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    @include m(new) {
+      margin-left: 15px;
+    }
+    @include m(old) {
+      text-decoration: line-through;
+    }
+  }
+  @include e(button) {
+    @include font('DM Sans', 13px, $regularFontWeight);
+    line-height: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 10px 0;
+    margin-top: 5px;
+  }
+  max-width: 370px;
+  @include e(img-box) {
+    order: -1;
+  }
+  @include e(img) {
+    width: 100%;
+  }
+  @include e(button) {
+    background: $bg;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+  }
+  @include e(button_click) {
+    background: $green;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    color: $white;
+  }
+  @include e(sale) {
+    background: $yellow;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+  }
+  @include e(inscr) {
+    align-self: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    @include font('DM Sans', 10px, $regularFontWeight);
+  }
+}
+
+.cart_content {
+  max-width: 260px;
+  position: relative;
+  background: $bg;
+}
+
+
+.products-cart {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s; /*Скорость перехода состояния элемента*/
+  flex-direction: column;
+  max-width: 320px;
+  position: absolute;
+  z-index: 99;
+  background: $white;
+  right: 0;
+  border: 1px solid $border;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 320px;
+}
+
+.products-cart_visible {
+  opacity: 1;
+}
+.products {
+  max-width: 1200px;
+  margin: auto;
+}

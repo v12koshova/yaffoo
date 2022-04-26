@@ -1,0 +1,20 @@
+.product {
+  @include e(title) {
+    &:hover {
+      color: $grey;
+    }
+  }
+  @include e(button) {
+    &:hover {
+      background: $yellow;
+    }
+  }
+}
+.cart-wrap {
+  position: relative;
+  &:hover .products-cart {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+}

@@ -1,0 +1,15 @@
+.coupon {
+  @include e(span) {
+    margin-top: 14px;
+    @include m(success) {
+      &::before {
+        top: -8px;
+      }
+    }
+    @include m(error) {
+      &::before {
+        top: -8px;
+      }
+    }
+  }
+}

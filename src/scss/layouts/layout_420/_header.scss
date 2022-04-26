@@ -1,0 +1,12 @@
+.search-form {
+  width: 100%;
+  left: 0;
+  top: 20px;
+  @include e(span) {
+    right: 5%;
+  }
+  @include e(input) {
+    width: 90%;
+    left: 0;
+  }
+}

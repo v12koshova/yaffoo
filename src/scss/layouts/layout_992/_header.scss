@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0 9px 0;
+}
+.social {
+  @include m(header) {
+    margin-top: 0;
+  }
+  @include e(item) {
+    @include m(header) {
+      margin: 0 16px 0 16px;
+    }
+  }
+}
+.sec-head {
+  margin-bottom: 60px;
+}

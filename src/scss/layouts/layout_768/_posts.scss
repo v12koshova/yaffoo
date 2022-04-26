@@ -1,0 +1,16 @@
+.posts {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-column-gap: 7%;
+  @include m(sidebar) {
+    grid-gap: 3%;
+    grid-template-columns: 1fr 90px;
+  }
+}
+.post {
+  @include e(img-box) {
+    padding-bottom: 100%;
+    @include m(slider) {
+      padding-bottom: 46%;
+    }
+  }
+}

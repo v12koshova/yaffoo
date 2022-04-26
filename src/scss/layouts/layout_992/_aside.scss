@@ -1,0 +1,13 @@
+.about {
+  @include e(img-box) {
+    margin-top: 0;
+  }
+}
+.sidebar {
+  padding-left: 50px;
+  margin-top: 0;
+  grid-row: 1 / -1;
+  @include m(contacts) {
+    margin-top: 30px;
+  }
+}

@@ -1,0 +1,82 @@
+//fonts
+$google-font: 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=PT+Serif:ital@1&family=Source+Serif+Pro&display=swap';
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot?1q4fz6');
+  src: url('../fonts/icomoon.eot?1q4fz6#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?1q4fz6') format('truetype'),
+    url('../fonts/icomoon.woff?1q4fz6') format('woff'),
+    url('../fonts/icomoon.svg?1q4fz6#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  //   speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+$baseFontSize: 16px;
+$baseFontFamily: 'Ubuntu', sans-serif;
+
+$regularFontWeight: 400;
+$mediumFontWeight: 500;
+$boldFontWeight: 700;
+
+$mobilePadding: (12px / $baseFontSize) * 1rem;
+$desktopPadding: 1rem;
+
+// Paths
+$i: '../i/';
+$fontsPath: '../fonts/';
+$usersFilesPath: '../userfiles/';
+
+// Colors
+$black: #000000;
+$white: #ffffff;
+$bg: #fbf7ed;
+$green: #005240;
+$yellow: #ffd874;
+$grey: #a8aab2;
+$tags: #121416;
+$border: #e8e8e8;
+$navElement: #0a0a0a;
+$navElement_hover: #898989;
+$navElement_active: #878787;
+$navDropdown-element: #111111;
+$navDropdown-element_hover: #a8aab2;
+$navDropdown-element_active: #a8aab2;
+$navDropdown-bg: #ffffff;
+$navDropdown-bd: #e8e8e8;
+
+.icon-search:before {
+  content: '\e903';
+}
+.icon-dribbble-with-circle:before {
+  content: '\e900';
+}
+.icon-shopping-cart:before {
+  content: '\e902';
+}
+.icon-instagram:before {
+  content: '\e901';
+}
+.icon-facebook:before {
+  content: '\ea90';
+}
+.icon-twitter:before {
+  content: '\ea96';
+}
+.icon-pinterest:before {
+  content: '\ead1';
+}

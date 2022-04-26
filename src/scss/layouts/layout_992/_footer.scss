@@ -1,0 +1,13 @@
+.footer {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.first-block {
+  order: -1;
+}
+.nav {
+  @include e(item) {
+    margin-top: 0;
+  }
+}

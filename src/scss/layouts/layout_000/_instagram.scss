@@ -1,0 +1,55 @@
+.instagram {
+  @include e(title) {
+    @include font('DM Sans', 14px, $mediumFontWeight);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.5em;
+    text-decoration: none;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      background-image: url(../i/instagram.svg);
+      width: 18px;
+      height: 18px;
+      top: 0;
+      left: -23px;
+      background-size: contain;
+    }
+  }
+  @include e(img) {
+    width: auto;
+    height: 270px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include m(1) {
+      background-image: url(https://www.yaffotheme.com/primary/wp-content/uploads/sites/2/sb-instagram-feed-images/150969167_1377203465961268_1167167678403401548_nfull.jpg);
+    }
+    @include m(2) {
+      background-image: url(https://www.yaffotheme.com/primary/wp-content/uploads/sites/2/sb-instagram-feed-images/151790054_113755414054060_7437403706351151526_nfull.jpg);
+    }
+    @include m(3) {
+      background-image: url(https://www.yaffotheme.com/primary/wp-content/uploads/sites/2/sb-instagram-feed-images/150607714_258605402420391_3180125917170080293_nfull.jpg);
+    }
+    @include m(4) {
+      background-image: url(https://www.yaffotheme.com/primary/wp-content/uploads/sites/2/sb-instagram-feed-images/151046573_238205458014871_1245725661552895438_nfull.jpg);
+    }
+    @include m(5) {
+      background-image: url(https://www.yaffotheme.com/primary/wp-content/uploads/sites/2/sb-instagram-feed-images/150678258_916343825811578_6331088862122323285_nfull.jpg);
+    }
+    @include m(6) {
+      background-image: url(https://www.yaffotheme.com/primary/wp-content/uploads/sites/2/sb-instagram-feed-images/151137194_3755746157874995_153495572517343359_nfull.jpg);
+    }
+  }
+  @include e(name) {
+    margin-bottom: 15px;
+  }
+  @include e(gallery) {
+    // display: flex;
+    // flex-wrap: wrap;
+    // align-items: center;
+    display: grid;
+    margin: auto;
+  }
+}

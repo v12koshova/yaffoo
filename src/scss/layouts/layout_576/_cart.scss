@@ -1,0 +1,5 @@
+.coupon {
+  @include e(span) {
+    margin-top: 16px;
+  }
+}

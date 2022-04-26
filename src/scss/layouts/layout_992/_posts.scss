@@ -1,0 +1,7 @@
+.post {
+  @include e(title) {
+    @include m(slider) {
+      @include font('DM Sans', 48px, $regularFontWeight);
+    }
+  }
+}

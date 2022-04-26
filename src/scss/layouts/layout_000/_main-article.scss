@@ -1,0 +1,29 @@
+// .main-article {
+//   display: flex;
+//   flex-direction: column;
+//   max-width: 90%;
+//   margin: auto;
+//   @include e(img-box) {
+//     max-width: 100%;
+//     width: 100%;
+//     order: -2;
+//   }
+//   @include e(tag) {
+//     max-width: 100%;
+//     width: 100%;
+//     order: -1;
+//   }
+//   @include e(description) {
+//     max-width: 100%;
+//     width: 100%;
+//     order: -1;
+//   }
+// }
+.main-article__img {
+  max-height: 395px;
+  width: contain;
+}
+// .post__img-box {
+// }
+// .post__description {
+// }

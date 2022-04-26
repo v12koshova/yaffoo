@@ -1,0 +1,70 @@
+.sec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 35px;
+  border-bottom: 1px solid $border;
+  position: relative;
+}
+.menu-icon {
+  //   margin-top: 22px;
+  margin-left: 22px;
+  @include e(chart) {
+    width: 22px;
+    height: 2px;
+    background: $navElement;
+    margin-top: 6px;
+  }
+}
+.logo {
+  @include e(img) {
+    margin-top: 10px;
+    max-height: 35px;
+  }
+}
+
+.nav {
+  list-style: none;
+  padding-left: 0;
+  @include e(link) {
+    @include font('DM Sans', 12px, $mediumFontWeight);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    text-decoration: none;
+  }
+}
+.header {
+  display: none;
+}
+.title {
+  @include invis();
+}
+.cart {
+  padding-top: 3px;
+  border: none;
+  background: none;
+  position: relative;
+  @include e(count) {
+    @include font('DM Sans', 10px, $regularFontWeight, $white);
+    letter-spacing: 0.1em;
+    line-height: 1.5em;
+    margin-left: 1px;
+    position: absolute;
+    top: -4px;
+    right: -7px;
+    background: $green;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1px;
+    @include m(cart-page) {
+      top: -2px;
+    }
+  }
+}

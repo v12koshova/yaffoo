@@ -1,0 +1,17 @@
+.post {
+  @include e(img) {
+    @include m(search) {
+      left: 6%;
+    }
+  }
+  @include e(title) {
+    @include m(search) {
+      max-width: 90%;
+    }
+  }
+  @include e(tag) {
+    @include m(search) {
+      right: 5%;
+    }
+  }
+}

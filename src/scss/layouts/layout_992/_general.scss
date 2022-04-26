@@ -1,0 +1,127 @@
+.mark {
+  @include m(main) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 40px 48px 45px 48px;
+    width: calc(100% - 100px);
+  }
+}
+.text {
+  @include m(main) {
+    text-align: start;
+  }
+
+  @include e(title) {
+    @include m(main) {
+      margin: 0 0 5px 0;
+    }
+  }
+  @include e(description) {
+    @include m(main) {
+      margin: 0 0 5px 0;
+    }
+  }
+}
+.form {
+  @include m(main) {
+    position: relative;
+    text-align: end;
+  }
+
+  @include e(input) {
+    @include m(main) {
+      position: relative;
+      vertical-align: middle;
+      top: 50%;
+      margin-top: -30px;
+      max-width: 90%;
+    }
+  }
+  @include e(btn) {
+    @include m(main) {
+      position: absolute;
+      width: 125px;
+      padding: 0;
+      right: 10px;
+      top: 50%;
+      margin-top: -20px;
+    }
+  }
+}
+.wrapper {
+  display: grid;
+  grid-template-areas: 'post post aside';
+  grid-template-columns: 1fr 1fr;
+  // 'header header header'
+  // 'article article article'
+  // 'desk desk desk'
+  // 'mark mark mark' ;
+  // 'inst inst inst'
+  // 'footer footer footer';
+  // @include m(contacts) {
+  //   display: flex;
+  // }
+  @include m(cart) {
+    display: grid;
+    grid-template-areas:
+      'coupon coupon aside'
+      'cart cart aside';
+  }
+  grid-template-rows: auto 1fr;
+  align-items: start;
+  
+}
+// .cart-total {
+//   // margin-top: 20px;
+//   margin-top: 5px;
+// }
+.coupon {
+  grid-area: coupon;
+}
+.cart-table {
+  grid-area: cart;
+  @include e(btn) {
+    padding: 12px;
+  }
+  @include e(btn-box) {
+    grid-area: cart;
+  }
+}
+.sidebar {
+  @include m(cart) {
+    grid-area: aside;
+  }
+}
+// .sec-head {
+//   grid-area: header;
+// }
+// .post_main {
+//   grid-area: article;
+// }
+// .desc {
+//   grid-area: desk;
+// }
+// .mark_main {
+//   grid-area: mark;
+// }
+.main {
+  grid-area: post;
+}
+.sidebar {
+  grid-area: aside;
+  max-width: 300px;
+  align-self: start;
+}
+// .instagram {
+//   grid-area: inst;
+// }
+// .footer {
+//   grid-area: footer;
+// }
+
+.container {
+  max-width: 95%;
+}
+// .post__video-box {
+//   padding-bottom: 140%;
+// }
