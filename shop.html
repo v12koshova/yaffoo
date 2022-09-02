@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header class="header" id="home" data-scroll-header>
+      <h1 class="title">Yaffo</h1>
+      <nav class="header-nav">
+        <ul class="nav">
+          <li class="nav__item"><a class="nav__link" href="index.html">HOME</a></li>
+          <li class="nav__item"><a class="nav__link" href="about.html">ABOUT ME</a></li>
+          <li class="nav__item"><a class="nav__link" href="shop.html">SHOP</a></li>
+          <li class="nav__item"><a class="nav__link" href="contacts.html">CONTACTS</a></li>
+        </ul>
+      </nav>
+      <div class="social social_header">
+        <a class="social__item social__item_header" href="">
+          <svg xmlns="http://www.w3.org/2000/svg" height="23px" width="25px">
+            <use xlink:href="i/sprite.svg#facebook" />
+          </svg>
+        </a>
+        <a class="social__item social__item_header" href="">
+          <svg xmlns="http://www.w3.org/2000/svg" height="23px" width="23px">
+            <use xlink:href="i/sprite.svg#instagram" />
+          </svg>
+        </a>
+        <a class="social__item social__item_header" href="">
+          <svg xmlns="http://www.w3.org/2000/svg" height="25px" width="25px">
+            <use xlink:href="i/sprite.svg#twitter" />
+          </svg>
+        </a>
+        <a class="social__item social__item_header" href="">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px">
+            <use xlink:href="i/sprite.svg#pinterest" />
+          </svg>
+        </a>
+        <a class="social__item social__item_header" href="">
+          <svg xmlns="http://www.w3.org/2000/svg" height="27px" width="25px">
+            <use xlink:href="i/sprite.svg#behance" />
+          </svg>
+        </a>
+        <div class="cart-wrap" id="cart-wrap" data-cart="cart">
+          <a class="cart" id="checkout" href="cart.html">
+            <svg xmlns="http://www.w3.org/2000/svg" height="23px" width="23px">
+              <use xlink:href="i/sprite.svg#cart" />
+            </svg>
+            <span class="cart__count">0</span>
+          </a>
+          <div id="cart__content">
+            <section class="products-cart" id="products-cart">
+              <div class="cart-items" data-cart="cart">
+                <!-- <div class="cart-item">
+              <button class="cart-item__remove">x</button>
+              <div class="cart-item__description">
+                <h3 class="cart-item__title">Cell Phone Wood stand</h3>
+                <div class="cart-item__sub">
+                  <input class="cart-item__quantity" type="number" value="1">
+                  <p class="cart-item__price">£39.00</p>
+                </div>
+              </div>
+              <div class="cart-item__img-box">
+                <img class="cart-item__img"
+                  src="https://www.yaffotheme.com/primary/wp-content/uploads/sites/2/2020/10/image-304-300x300.jpg"
+                  alt="">
+              </div> 
+            
+            </div> -->
+              </div>
+
+              <div class="cart-total" data-cart="cart">
+                <p class="cart-total__title">Subotal: <span class="cart-total__price">$0.00</span></p>
+              </div>
+              <div class="cart-buttons" data-cart="cart">
+                <a href="cart.html" class="cart-buttons__btn cart-buttons__btn_view-cart" type="button">View cart</a>
+                <a href="checkout.html" class="cart-buttons__btn cart-buttons__btn_chekout" type="button">Checkout</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+
+    <div class="sec-head">
+      <a href="#" class="menu-button">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+      <div class="dark-overlay"></div>
+      <div class="menu">
+        <div class="menu-wrap">
+          <div class="wrap">
+            <a href="#" class="menu-button in-mobile active">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+            <div class="menu__logo">
+              <img class="menu__img"
+                src="https://www.yaffotheme.com/primary/wp-content/themes/yaffo/assets/images/logos/header-mobile/logo.png"
+                alt="">
+            </div>
+          </div>
+          <nav class="menu__nav">
+            <ul class="menu__items">
+              <li class="menu__item"><a class="menu__link" href="index.html">Home</a></li>
+              <li class="menu__item"><a class="menu__link" href="about.html">About me</a></li>
+              <li class="menu__item"><a class="menu__link" href="shop.html">Shop</a></li>
+              <li class="menu__item"><a class="menu__link" href="contacts.html">Contacts</a></li>
+            </ul>
+          </nav>
+          <div class="mark mark_menu">
+            <div class="text text_menu">
+              <h3 class="text__title text__title_menu">Join Our Newsletter</h3>
+              <p class="text__description text__description_menu">Enter your email and we'll keep you posted with news
+                and updates!</p>
+            </div>
+            <div class="form form_menu">
+              <input class="form__input form__input_menu" type="email" name="" id="" placeholder="Enter your email...">
+              <button class="form__btn form__btn_menu">Subscribe</button>
+            </div>
+          </div>
+          <div class="social social_menu">
+            <a class="social__item" href="">
+              <svg xmlns="http://www.w3.org/2000/svg" height="23px" width="25px">
+                <use xlink:href="i/sprite.svg#facebook" />
+              </svg>
+            </a>
+            <a class="social__item" href="">
+              <svg xmlns="http://www.w3.org/2000/svg" height="23px" width="23px">
+                <use xlink:href="i/sprite.svg#instagram" />
+              </svg>
+            </a>
+            <a class="social__item" href="">
+              <svg xmlns="http://www.w3.org/2000/svg" height="25px" width="25px">
+                <use xlink:href="i/sprite.svg#twitter" />
+              </svg>
+            </a>
+            <a class="social__item" href="">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px">
+                <use xlink:href="i/sprite.svg#pinterest" />
+              </svg>
+            </a>
+            <a class="social__item" href="">
+              <svg xmlns="http://www.w3.org/2000/svg" height="27px" width="25px">
+                <use xlink:href="i/sprite.svg#behance" />
+              </svg>
+            </a>
+            <a class="cart" href="cart.html">
+              <svg xmlns="http://www.w3.org/2000/svg" height="23px" width="23px">
+                <use xlink:href="i/sprite.svg#cart" />
+              </svg>
+              <span class="cart__count cart__count_cart-page">0</span>
+            </a>
+            <div></div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="logo">
+        <img class="logo__img"
+          src="https://www.yaffotheme.com/primary/wp-content/themes/yaffo/assets/images/logos/header-mobile/logo.png"
+          alt="">
+      </div>
+      <div class="search">
+        <svg id="search" data-id="searchBtn" xmlns="http://www.w3.org/2000/svg" height="24px" width="24px">
+          <use xlink:href="i/sprite.svg#search" />
+        </svg>
+      </div>
+      <form class="search-form " id="search-form">
+        <input class="search-form__input" data-id="search-form__input" type="search" name="" id=""
+          placeholder="Enter Keywords">
+        <svg class="search-form__span" data-id="searchBtn" xmlns="http://www.w3.org/2000/svg" height="17px" width="17px">
+          <use xlink:href="i/sprite.svg#close" />
+        </svg>
+        <div class="search-form__results">
+          <ul class="search-form__results-wrap">
+            <!-- <li class="post post_search">
+              <a href="" class="post post_search">
+                <h3 class="post__title post__title_search">Since You Need A Green Light</h3>
+                <div class="post__img-box post__img-box_search">
+                  <img src="i/girlinplants.jpg" alt="" class="post__img">
+                </div>
+              </a>
+            </li> -->
+          </ul>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="products">
+      <!-- <div class="product">
+      <h3 class="product__title">Ssung Galaxy Sf10</h3>
+      <p class="product__price">20</p>
+      <div class="product__img-box">
+        <img src="https://www.yaffotheme.com/primary/wp-content/uploads/sites/2/2020/09/image-211-580x580.jpg" alt=""
+          class="product__img">
+      </div>
+      <button class="product__button" data-id="1">Add to card</button>
+      <div class="product__sale">
+        <p class="product__inscr">Sale!</p>
+      </div>
+    </div>
+    <div class="product">
+      <h3 class="product__title">Samsung Galaxy Ss10</h3>
+      <p class="product__price">30</p>
+      <div class="product__img-box">
+        <img src="https://www.yaffotheme.com/primary/wp-content/uploads/sites/2/2020/09/image-211-580x580.jpg" alt=""
+          class="product__img">
+      </div>
+      <button class="product__button" data-id="7">Add to card</button>
+      <div class="product__sale">
+        <p class="product__inscr">Sale!</p>
+      </div>
+    </div>
+    <div class="product">
+      <h3 class="product__title">Galaxy Sw10</h3>
+      <p class="product__price">10</p>
+      <div class="product__img-box">
+        <img src="https://www.yaffotheme.com/primary/wp-content/uploads/sites/2/2020/09/image-211-580x580.jpg" alt=""
+          class="product__img">
+      </div>
+      <button class="product__button" data-id="2">Add to card</button>
+      <div class="product__sale">
+        <p class="product__inscr">Sale!</p>
+      </div>
+    </div> -->
+
+    </div>
+    <!-- <div class="products-button">
+      <button class="products-btn">Show more</button>
+    </div> -->
+
+    <div class="instagram">
+      <h2 class="instagram__name"><a class="instagram__title" href="">FOLLOW ON INSTAGRAM</a></h2>
+      <div class="instagram__gallery">
+        <a class="instagram__img instagram__img_1" href="https://www.instagram.com/p/CLY5JTJBUXI/"></a>
+        <a class="instagram__img instagram__img_2" href="https://www.instagram.com/p/CLY5HcJhWkn/"></a>
+        <a class="instagram__img instagram__img_3" href="https://www.instagram.com/p/CLY5F3Sh998/"></a>
+        <a class="instagram__img instagram__img_4" href="https://www.instagram.com/p/CLY5EBPBz5H/"></a>
+        <a class="instagram__img instagram__img_5" href="https://www.instagram.com/p/CLY5CFXB6DJ/"></a>
+        <a class="instagram__img instagram__img_6" href="https://www.instagram.com/p/CLY5AFohmSJ/"></a>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="first-block">
+        <div class="social">
+          <a class="social__item" href="">
+            <svg xmlns="http://www.w3.org/2000/svg" height="25px" width="25px">
+              <use xlink:href="i/favorites.min.svg#icon-facebook-f" />
+            </svg>
+          </a>
+          <a class="social__item" href="">
+            <svg xmlns="http://www.w3.org/2000/svg" height="25px" width="25px">
+              <use xlink:href="i/favorites.min.svg#icon-instagram-new-2" />
+            </svg>
+          </a>
+          <a class="social__item" href="">
+            <svg xmlns="http://www.w3.org/2000/svg" height="25px" width="25px">
+              <use xlink:href="i/favorites.min.svg#icon-twitter" />
+            </svg>
+          </a>
+          <a class="social__item" href="">
+            <svg xmlns="http://www.w3.org/2000/svg" height="25px" width="25px">
+              <use xlink:href="i/favorites.min.svg#icon-pinterest" />
+            </svg>
+          </a>
+          <a class="social__item" href="">
+            <svg xmlns="http://www.w3.org/2000/svg" height="25px" width="25px">
+              <use xlink:href="i/favorites.min.svg#icon-behance" />
+            </svg>
+          </a>
+        </div>
+        <p class="first-block__copyright">Lifestyle Blog & Magazine WordPress Theme</p>
+      </div>
+
+      <div class="second-block">
+        <img class="second-block__img"
+          src="https://www.yaffotheme.com/primary/wp-content/themes/yaffo/assets/images/logos/header-mobile/logo.png"
+          alt="">
+      </div>
+
+      <nav class="footer-nav">
+        <ul class="nav">
+          <li class="nav__item"><a class="nav__link" href="index.html">HOME</a></li>
+          <li class="nav__item"><a class="nav__link" href="shop.html">SHOP</a></li>
+          <li class="nav__item"><a class="nav__link" href="about.html">ABOUT ME</a></li>
+          <li class="nav__item"><a class="nav__link" href="contacts.html">CONTACTS</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
+
+  <a id="upBtn" class="upBtn" href="#home">
+    <svg width="20" height="20" viewbox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 8L7 2L13 8" stroke="white" stroke-width="1.5"></path>
+    </svg>
+  </a>
+
+
+
+
+
+  <div class="cookie" style="display:none">
+    <div class="cookie__close">
+      <div class="cookie__close-chart cookie__close-chart_one"></div>
+    </div>
+    <p class="cookie__text">Our site uses cookies. Learn more about our use of cookies: cookie policy</p>
+    <button class="cookie__btn">I accept use of cookies</button>
+  </div>
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
+  <!-- <script src="js/data_base_shop.js"></script>
+  <script src="js/cookies.js"></script>
+  <script src="js/products.js" type="module"></script>
+  <script src="js/shop_ls_copy.js" type="module"></script>
+  <script src="js/cart-page.js" type="module"></script> -->
+  <script src="js/scriptShop.js"></script>
+  <script src="js/smooth-scroll.min.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+
+</html>

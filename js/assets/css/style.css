@@ -1,0 +1,26 @@
+.wrap {
+  max-width: 1200px;
+  margin: 50px auto 0;
+  display: flex;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  font-size: 2rem;
+}
+.box__circle {
+  border-radius: 150px;
+}
+.box__shape {
+  width: 300px;
+  height: 150px;
+  border-radius: 50%;
+}
+.box__lemon {
+  border-radius: 10px 150px 10px 150px;
+}

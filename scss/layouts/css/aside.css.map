@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,AAAC,CACL,SAAS,CAAE,KAAK,CAChB,KAAK,CAAE,KAAK,CACb,AAED,AAAA,MAAM,AAAC,CACL,WAAW,CAAE,qBAAqB,CAClC,UAAU,CAAE,IAAI,CACjB",
+    "sources": [
+        "../layout_992/aside.scss"
+    ],
+    "names": [],
+    "file": "aside.css"
+}
