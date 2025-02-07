@@ -1,0 +1,54 @@
+.form {
+    &__warning {
+        color: #ff0000;
+        margin-top: 0;
+        margin-left: 10px;
+    }
+
+    &__input {
+        width: 100%;
+        min-height: 60px;
+        padding: 0 20px;
+        margin-top: 13px;
+        border: 1px solid #e8e8e8;
+        box-sizing: border-box;
+
+        textarea {
+            resize: vertical;
+            padding: 10px;
+            font: 400 16px "DM Sans";
+            color: #111
+        }
+    }
+
+    &__item {
+        margin-bottom: 13px;
+        text-align: left
+    }
+
+    &__label {
+        width: 100%;
+        font: 400 16px "DM Sans";
+        color: #121416
+    }
+
+    &__btn {
+        padding: 10px 32px;
+        border: 1px solid #e8e8e8;
+        background: #fbf7ed;
+        text-transform: uppercase;
+        font: 400 13px "DM Sans";
+        color: #000;
+        line-height: 1.5em
+    }
+
+    &__modal {
+        background: #fbf7ed;
+        padding: 30px 0;
+    }
+}
+
+.contacts__form-warning_bottom {
+    border: 1px solid red;
+    padding: 20px
+}

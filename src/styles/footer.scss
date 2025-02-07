@@ -1,0 +1,33 @@
+.footer {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 60px 0;
+        margin: 0 auto;
+        gap: 20px;
+
+        @media only screen and (min-width: 991px) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 83px 0;
+        }
+    }
+
+    &__social {
+        order: 3;
+        max-width: 600px;
+        margin: auto;
+
+        @media only screen and (min-width: 991px) {
+            order: initial;
+            max-width: none;
+            margin: initial;
+        }
+    }
+
+    &__copyright {
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+}

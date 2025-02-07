@@ -1,0 +1,88 @@
+.subscribe {
+    container-type: inline-size;
+    &__wrapper {
+        margin: auto;
+        background: #fbf7ed;
+        padding: 35px 25px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        width: calc(100% - 50px);
+    }
+    &__title {
+      margin-top: 0;
+    }
+    &__description {
+        font: 400 18px "Source Serif Pro";
+        color: #111
+    }
+
+    &__input {
+        font: 400 18px "Source Serif Pro";
+        color: #121416;
+        line-height: 1.6em;
+        width: calc(100% - 20px);
+        max-width: 250px;
+        padding: 14px 8px;
+        margin: 10px 0;
+        border: 1px solid #e8e8e8;
+    }
+
+    &__btn {
+        font: 500 13px "DM Sans";
+        color: #fff;
+        line-height: 1.6em;
+        background: #005240;
+        text-transform: uppercase;
+        width: 100%;
+        max-width: 250px;
+        padding: 10px 0;
+        margin: 10px 0;
+        border: none;
+        border-radius: 3px;
+        letter-spacing: .1em;
+        line-height: 2.5rem
+    }
+
+    @container (min-width: 991px) {
+        &__wrapper {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          padding: 40px 48px 45px 48px;
+          width: calc(100% - 100px)
+        }
+        &__text {
+          text-align: start
+        }
+      
+        &__title {
+          margin: 0 0 5px 0
+        }
+      
+        &__description {
+          margin: 0 0 5px 0
+        }
+      
+        &__form {
+          position: relative;
+          text-align: end
+        }
+      
+        &__input {
+          position: relative;
+          vertical-align: middle;
+          top: 50%;
+          margin-top: -30px;
+          max-width: 90%
+        }
+      
+        &__btn {
+          position: absolute;
+          width: 125px;
+          padding: 0;
+          right: 10px;
+          top: 50%;
+          margin-top: -20px
+        }
+      }
+}
+

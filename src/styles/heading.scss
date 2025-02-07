@@ -1,0 +1,23 @@
+.heading {
+    &__navigation {
+        margin-top: 20px;
+        margin-bottom: 60px;
+        font: 400 12px "DM Sans";
+        color: #a8aab2;
+        letter-spacing: .1em;
+        text-transform: uppercase
+    }
+
+    &__link {
+        text-decoration: none;
+        color: #111
+    }
+
+    &__title {
+        @media only screen and (min-width: 640px) {
+            margin-bottom: 0;
+            line-height: 1.2em;
+        }
+    }
+
+}

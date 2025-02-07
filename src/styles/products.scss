@@ -1,0 +1,99 @@
+.products {
+    &__wrapper {
+        @media only screen and (min-width: 576px) {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 45px;
+        }
+    }
+}
+
+.product {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 30px;
+    max-width: 370px;
+    width: 100%;
+
+    &__title {
+        font: 400 22px "DM Sans";
+        color: #111;
+        line-height: 1em;
+        margin-bottom: 10px;
+
+        @media only screen and (min-width: 991px) {
+            &:hover {
+                color: #a8aab2
+            }
+        }
+    }
+
+    &__price {
+        font: 400 12px "DM Sans";
+        color: #a8aab2;
+        line-height: 1.5em;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        &--old {
+            text-decoration: line-through;
+            opacity: 0.7;
+            display: inline-block;
+        }
+    }
+
+    &__button {
+        font: 400 13px "DM Sans";
+        color: #111;
+        line-height: 1.5em;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        padding: 10px 0;
+        background: #fbf7ed;
+        width: 100%;
+
+        @media only screen and (min-width: 991px) {
+            &:hover {
+                background: #ffd874
+            }
+        }
+    }
+
+
+    &__img {
+        order: -1;
+
+        img {
+            max-width: 369px;
+            width: 100%;
+            height: 369px;
+        }
+    }
+
+
+    .product__sale {
+        background: #ffd874;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        right: -10px;
+        top: -10px
+    }
+
+    &__inscr {
+        align-self: center;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        font: 400 10px "DM Sans";
+        color: #111
+    }
+}

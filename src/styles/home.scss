@@ -1,0 +1,132 @@
+.posts {
+    &__grid {
+        display: grid;
+        grid-row-gap: 60px;
+        margin-top: 60px;
+        justify-items: center;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+
+        @media only screen and (min-width: 768px) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-column-gap: 7%
+        }
+
+    }
+
+    &__btn {
+        font: 500 11px "DM Sans";
+        color: #fff;
+        background: #005240;
+        border-radius: 3px;
+        padding: 13px 31px;
+        text-transform: uppercase;
+        margin: 50px 0 0 0;
+    }
+}
+
+
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 700px;
+    width: 100%;
+
+    &--sticky {
+        max-width: none;
+
+        .post__img {
+            height: auto;
+        }
+    }
+
+    &__title {
+        margin-top: 15px;
+        margin-bottom: 10px
+    }
+
+    &__content {
+        font: 400 19px "Source Serif Pro";
+        color: #121416;
+        line-height: 1.6em;
+        text-align: left;
+        order: 2;
+        margin-top: 25px
+    }
+
+    &__buttons {
+        order: 3;
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center
+    }
+
+    &__btn {
+        padding: 10px 25px;
+        text-transform: uppercase;
+        font: 500 13px "DM Sans";
+        color: #111;
+        letter-spacing: .1em;
+        line-height: 1.5em;
+        background: #fbf7ed
+    }
+
+    &__share {
+        display: none;
+
+        @media only screen and (min-width: 640px) {
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            color: #a8aab2;
+            font-family: "DM Sans", serif;
+        }
+    }
+
+    &__share-icons {
+        @media only screen and (min-width: 640px) {
+
+            padding-left: 30px;
+            gap: 10px;
+            position: relative;
+
+            &::before {
+                content: "—";
+                position: absolute;
+                left: 0;
+              }
+        }
+    }
+
+    &__img {
+        order: -2;
+        max-width: 700px;
+        width: 100%;
+        margin-bottom: 20px;
+
+        img {
+            height: 280px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__video {
+        margin-top: 30px;
+        width: 100%;
+        order: 1;
+        position: relative;
+        display: block;
+        video {
+            position: absolute;
+            top: 0;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+}
+

@@ -1,0 +1,17 @@
+.contacts {
+    &__title {
+        line-height: 1.4em;
+        margin-top: 10px
+    }
+
+    &__text {
+        font: 400 19px "Source Serif Pro";
+        color: #121416;
+        line-height: 1.6em;
+        text-align: start
+    }
+
+    &__img {
+        order: -1
+    }
+}

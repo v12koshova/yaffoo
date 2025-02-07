@@ -1,0 +1,182 @@
+.sidebar {
+    text-align: center;
+    margin-top: 50px;
+
+    @media only screen and (min-width: 991px) {
+        align-self: start;
+        margin-top: 0;
+        width: 100%;
+    }
+
+
+    &__title {
+        font: 500 14px "DM Sans";
+        color: #111;
+        text-transform: uppercase;
+        position: relative;
+        margin: 0 0 30px 0;
+        padding: 0 calc(10px + 2%);
+
+        &::before {
+            content: "";
+            position: absolute;
+            border-bottom: 1px solid #e8e8e8;
+            width: 50%;
+            left: 5px;
+            top: 9px;
+            z-index: -1
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            border-bottom: 1px solid #e8e8e8;
+            width: 50%;
+            right: 5px;
+            top: 9px;
+            z-index: -1
+        }
+    }
+
+    &__title-span {
+        padding: 0 calc(5px + 2%);
+        z-index: 1;
+        background-color: #fff
+    }
+
+    &__social {
+        margin-bottom: 55px
+    }
+
+    &__featured {
+        margin-bottom: 55px;
+    }
+
+    &__subscribe {
+        margin-bottom: 55px
+    }
+
+    &__tags {
+        margin-bottom: 55px
+    }
+
+    &__banner {
+        margin-bottom: 50px
+    }
+}
+
+.sidebar-about {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 55px;
+
+    &__name {
+        font: 400 27px "DM Sans";
+        color: #111;
+        margin: 0
+    }
+
+    &__proffesion {
+        text-transform: uppercase;
+        line-height: 1.5em;
+        letter-spacing: .1em;
+        margin-top: 5px;
+        font: 400 12px "DM Sans";
+        color: #121416
+    }
+
+    &__description {
+        font: 400 19px "Source Serif Pro";
+        color: #121416;
+        line-height: 1.6em;
+        letter-spacing: 0px;
+        margin: 5px 0 20px 0
+    }
+
+    &__img {
+        &--main {
+            margin-bottom: 25px
+        }
+    }
+}
+
+.sidebar-social {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 30px
+}
+
+.sidebar-featured {
+    &__background {
+        img {
+            height: 300px;
+            width: 100%;
+        }
+    }
+
+    &__content {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+        * {
+            color: white;
+        }
+    }
+
+    &__title {
+        font-size: 27px;
+        line-height: 38px;
+    }
+
+}
+
+.sidebar-products {
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e8e8e8;
+    }
+
+    &__item-info {
+        text-align: left;
+    }
+
+    &__item-title {
+        font-size: 19px;
+        line-height: 29px;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    &__item-price {
+        display: flex;
+        gap: 10px;
+        font: 400 12px "DM Sans";
+        line-height: 18px;
+        color: #a8aab2;
+        margin: 0;
+        &--old {
+            font-size: 100%;
+            text-decoration: line-through;
+        }
+    }
+
+    &__item-img {
+        img {
+            height: 63px;
+            width: 63px;
+        }
+    }
+}

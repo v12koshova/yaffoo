@@ -1,0 +1,175 @@
+body {
+    font-family: "Source Serif Pro", serif;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    cursor: pointer;
+}
+
+img {
+    object-fit: cover;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 10px;
+    margin: auto;
+
+    &--l {
+        max-width: 1500px;
+    }
+}
+
+
+.title {
+    color: #111;
+    font-weight: 400;
+    font-family: "DM Sans";
+
+    &--xl {
+        font-size: 28px;
+        line-height: 1.2em;
+        @media only screen and (min-width: 576px) {
+            font-size: 38px;
+        }
+        @media only screen and (min-width: 990px) {
+            font-size: 48px;
+            line-height: 58px;
+        }
+    }
+
+    &--l {
+        font-size: 28px;
+        line-height: 1.2em;
+        @media only screen and (min-width: 576px) {
+            line-height: 1.4em;
+            font-size: 40px;
+        }
+    }
+
+    &--m {
+        font-size: 38px;
+        line-height: 46px;
+    }
+
+    &--s {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    &--xs {
+        font-size: 27px;
+        line-height: 38px;
+    }
+}
+
+.breadcrumbs {
+    display: flex;
+    justify-content: center;
+    font: 400 12px "DM Sans";
+    color: #a8aab2;
+    text-transform: uppercase;
+
+    &>p+p {
+        margin-left: 30px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 20px;
+            background-color: #a8aab2;
+            left: -25px;
+            top: 7px;
+        }
+    }
+}
+
+.time {
+    margin-bottom: 0;
+    font: 400 12px "DM Sans";
+}
+
+.date {
+    margin-bottom: 0;
+    position: relative;
+    font: 400 12px "DM Sans";
+
+}
+
+.tag {
+    font: 400 12px "DM Sans";
+    color: #121416;
+    border-bottom: 1px solid #ffd874;
+    order: -1;
+    display: inline-block;
+    padding-bottom: 3px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    text-transform: uppercase;
+    margin: 0;
+    cursor: pointer;
+}
+
+blockquote,
+.quote {
+    position: relative;
+    font: 400 25px "PT Serif";
+    color: #121416;
+    line-height: 1.5em;
+    font-style: italic;
+    text-align: start;
+    box-sizing: border-box;
+    margin: 30px auto;
+    display: block;
+    padding: 20px 30px;
+    @media only screen and (min-width: 576px) {
+        font-size: 27px;
+        padding: 20px 60px;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        /* background-image: url(../i/quotes.svg); */
+        width: 80px;
+        height: 65px;
+        background-size: contain;
+        z-index: -1;
+        left: 0
+    }
+}
+
+.quote-author,
+blockquote>span {
+    font: 400 10px "DM Sans";
+    color: #121416;
+    display: block;
+    line-height: 1.5em;
+    text-align: start;
+    text-transform: uppercase;
+    margin-top: 20px
+}
+
+ul,
+ol,
+.text,
+.single-post__content>p,
+.single-product__description>p {
+    font: 400 19px "Source Serif Pro";
+    color: #121416;
+    line-height: 1.6em;
+    text-align: start;
+    margin-bottom: 20px;
+
+    p {
+        margin: 0
+    }
+}

@@ -1,0 +1,38 @@
+.about {
+    max-width: 900px;
+    margin: auto;
+    padding: 10px;
+    &__title {
+        margin-bottom: 1rem
+    }
+
+    &__profession {
+        font: 500 16px "DM Sans";
+        color: #111;
+        line-height: 1.5em;
+        text-transform: uppercase;
+        margin-top: 0;
+        border-bottom: .5px solid #e8e8e8;
+        max-width: 4500px;
+        justify-self: center;
+        padding-bottom: 36px;
+        margin-bottom: 36px;
+    }
+
+    &__img {
+        text-align: left;
+        &--main {
+            img {
+                width: 100%;
+            }
+        }
+        img {
+            max-width: 900px;
+            max-height: 450px;
+        }
+    }
+
+    &__name {
+        display: block
+    }
+}
