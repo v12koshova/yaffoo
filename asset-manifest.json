@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/yaffoo/static/css/main.cbdcbd91.css",
+    "main.js": "/yaffoo/static/js/main.d82e8bbf.js",
+    "index.html": "/yaffoo/index.html",
+    "main.cbdcbd91.css.map": "/yaffoo/static/css/main.cbdcbd91.css.map",
+    "main.d82e8bbf.js.map": "/yaffoo/static/js/main.d82e8bbf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cbdcbd91.css",
+    "static/js/main.d82e8bbf.js"
+  ]
+}
