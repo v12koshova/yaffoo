@@ -6,6 +6,9 @@
             gap: 50px;
         }
     }
+    &__image {
+        margin-bottom: 30px;
+    }
     &__content {
         @media only screen and (min-width: 768px) {
             max-width: 60%;

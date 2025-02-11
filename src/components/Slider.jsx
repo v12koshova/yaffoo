@@ -22,11 +22,12 @@ function Slider() {
             loop={true}
             slidesPerView={1}
             slidesPerGroup={1}
-            // autoplay={{
-            //   delay: 5000,
-            //   disableOnInteraction: false,
-            // }}
-            // speed={2000}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
+            speed={2000}
+            key={posts.length}
           >
             {posts &&
               posts.map((post) => {

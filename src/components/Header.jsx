@@ -43,14 +43,13 @@ function Header() {
                 </NavLink>
               </li>
               <li className="nav__item">
-                <NavLink className="nav__link" to="contacts">
-                  CONTACTS
-                </NavLink>
-              </li>
-
-              <li className="nav__item">
                 <NavLink to="shop" className="nav__link">
                   SHOP
+                </NavLink>
+              </li>
+              <li className="nav__item">
+                <NavLink className="nav__link" to="contacts">
+                  CONTACTS
                 </NavLink>
               </li>
             </ul>

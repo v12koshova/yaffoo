@@ -38,14 +38,13 @@ function Menu({ state, setMenu }) {
             </Link>
           </li>
           <li className="side-menu__item">
-            <Link className="side-menu__link" to="contacts">
-              CONTACTS
-            </Link>
-          </li>
-
-          <li className="side-menu__item">
             <Link to="shop" className="side-menu__link">
               SHOP
+            </Link>
+          </li>
+          <li className="side-menu__item">
+            <Link className="side-menu__link" to="contacts">
+              CONTACTS
             </Link>
           </li>
         </ul>
