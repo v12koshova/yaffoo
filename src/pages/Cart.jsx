@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
@@ -13,18 +13,47 @@ function Cart() {
   const {products, status} = useSelector((state) => state.shop);
   const subtotal = useSelector((state) => state.cart.subtotal);
   const total = useSelector((state) => state.cart.total);
+  const isCoupon = useSelector((state) => state.cart.isCoupon);
 
   const couponInputRef = useRef();
 
-  const [coupon, setCoupon] = useState();
+  const [coupon, setCoupon] = useState({
+    couponState: '',
+    couponMessage: ''
+  });
+
+  useEffect(() => {
+    if (isCoupon) {
+      setCoupon({
+        couponState: "success",
+        couponMessage: 'Coupon has been applied'
+      });
+    }
+  }, [])
 
   function handleCoupon(e) {
     e.preventDefault();
-    if (couponInputRef.current.value === "h") {
-      setCoupon("success");
+    if (couponInputRef.current.value !== "h") {
+      setCoupon({
+        couponState: "error",
+        couponMessage: `Coupon "${couponInputRef.current.value}" does not exist!`
+      });
+    } else if (isCoupon && couponInputRef.current.value === "h") {
+      setCoupon({
+        couponState: "error",
+        couponMessage: "Coupon has already been applied."
+      });
+    } else if (!isCoupon && couponInputRef.current.value === "h") {
+      setCoupon({
+        couponState: "success",
+        couponMessage: 'Coupon has been applied'
+      });
       dispatch(applyCoupon());
     } else {
-      setCoupon("reject");
+      setCoupon({
+        couponState: "error",
+        couponMessage: "Something went wrong, please try again or contact us."
+      });
     }
   }
 
@@ -45,18 +74,11 @@ function Cart() {
           <div className="main__wrapper">
             {cart.length ? (
               <div className="cart">
-                {coupon && coupon === "success" && (
-                  <div className="notification">
-                    <p className="notification__span notification__span--success">
-                      Coupon has been applied
-                    </p>
-                  </div>
-                )}
 
-                {coupon && coupon === "reject" && (
+                {coupon.couponState !== '' && (
                   <div className="notification">
-                    <p className="notification__span notification__span--error">
-                      Coupon "{couponInputRef.current.value}" does not exist!
+                    <p className={`notification__span notification__span--${coupon.couponState}`}>
+                      { coupon.couponMessage }
                     </p>
                   </div>
                 )}

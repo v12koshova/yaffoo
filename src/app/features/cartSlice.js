@@ -5,7 +5,8 @@ export const cartSlice = createSlice({
     initialState: {
         products: [],
         subtotal: 0,
-        total: 0
+        total: 0,
+        isCoupon: false
     },
     reducers: {
         addToCart: (state, action) => {
@@ -33,8 +34,13 @@ export const cartSlice = createSlice({
             const amount = (+state.products.reduce((acc, product) => acc + (product.price * product.quantity), 0)).toFixed(2)
             state.subtotal = amount
             state.total = amount
+
+            if (amount === "0.00") {
+                state.isCoupon = false
+            }
         },
         changeQuantity: (state, action) => {
+            if (!action.payload.value) return 
 
             const index = state.products.findIndex(product => product.id === action.payload.id)
 
@@ -58,7 +64,8 @@ export const cartSlice = createSlice({
         },
 
         applyCoupon: (state) => {
-            state.total = (state.total - state.total * 0.2).toFixed(2)
+            state.total = (state.total - state.total * 0.2).toFixed(2);
+            state.isCoupon = true
         }
     }
 }) 
