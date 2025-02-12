@@ -64,6 +64,14 @@
         }
     }
 
+    table>tbody>tr>td {
+        padding: 20px 0 0 0;
+        
+        @container cart (min-width: 556px) {
+            padding: 20px 5px;
+        }
+    }
+
     &__item {
         border-bottom: 1px solid #e8e8e8;
 
@@ -153,13 +161,7 @@
 
     &__element {
         &--s {
-            padding-top: 20px;
-
-            td {
-                padding-top: 20px;
-            }
-
-            @container cart (min-width: 576px) {
+            @container cart (min-width: 556px) {
                 display: none;
             }
         }
@@ -167,7 +169,7 @@
         &--l {
             display: none;
 
-            @container cart (min-width: 576px) {
+            @container cart (min-width: 556px) {
                 display: table-cell;
             }
         }

@@ -9,10 +9,10 @@ function Header() {
   const [menu, setMenu] = useState(false);
   const dispatch = useDispatch();
   const cartProducts = useSelector((state) => state.cart.products);
-  
+
   const subtotal = useSelector((state) => state.cart.subtotal);
   const [cartCounter, setCartCounter] = useState(0);
-  const [searchBar, setSearchBar] = useState(false)
+  const [searchBar, setSearchBar] = useState(false);
 
   useEffect(() => {
     const counter = cartProducts.reduce(
@@ -21,9 +21,6 @@ function Header() {
     );
     setCartCounter(counter);
   }, [cartProducts]);
-
-
-  
 
   return (
     <header className="header" id="home" data-scroll-header>
@@ -55,7 +52,7 @@ function Header() {
             </ul>
           </nav>
 
-          <div className="header__links">
+          <div className="header__links links">
             <div className="header__social social">
               <a className="social__item social__item--facebook" href=""></a>
               <a className="social__item social__item--instagram" href=""></a>
@@ -63,8 +60,8 @@ function Header() {
               <a className="social__item social__item--pinterest" href=""></a>
             </div>
             <div className="header__cart">
-              <Link to="cart" className="header__cart-link">
-                <span className="header__cart-count">{cartCounter}</span>
+              <Link to="cart" className="header__cart-link cart-link">
+                <span className="header__cart-count cart-link__count">{cartCounter}</span>
               </Link>
               <div className="cart cart--header">
                 {!cartProducts.length ? (
@@ -94,23 +91,25 @@ function Header() {
                           </td>
                           <td>
                             <table>
-                              <tr>
-                                <td colSpan="2">
-                                  <Link
-                                    to={`/shop/${product.id}`}
-                                    className="cart-table__link"
-                                  >
-                                    {product.title}
-                                  </Link>
-                                </td>
-                              </tr>
-                              <tr className="cart-table__element cart-table__element--s">
-                                <td>${product.price}</td>
-                                <td>
-                                  <span>x</span>
-                                  <span>{product.quantity}</span>
-                                </td>
-                              </tr>
+                              <tbody>
+                                <tr>
+                                  <td colSpan="2">
+                                    <Link
+                                      to={`/shop/${product.id}`}
+                                      className="cart-table__link"
+                                    >
+                                      {product.title}
+                                    </Link>
+                                  </td>
+                                </tr>
+                                <tr className="cart-table__element cart-table__element--s">
+                                  <td>${product.price}</td>
+                                  <td>
+                                    <span>x</span>
+                                    <span>{product.quantity}</span>
+                                  </td>
+                                </tr>
+                              </tbody>
                             </table>
                           </td>
                         </tr>
@@ -152,9 +151,9 @@ function Header() {
               className="header__side-menu-button"
               onClick={() => setMenu((menuState) => !menuState)}
             ></button>
-            <Menu state={menu} setMenu={setMenu} />
+            <Menu state={menu} setMenu={setMenu} cartCounter={cartCounter} />
           </div>
-          <Link to='/' className="header__logo">
+          <Link to="/" className="header__logo">
             <img
               src={`${process.env.PUBLIC_URL}/assets/logo.webp`}
               alt="Yaffoo logo"
@@ -162,7 +161,10 @@ function Header() {
             />
           </Link>
           <div className="header__search">
-            <button className="header__search-button" onClick={() => setSearchBar(true)}></button>
+            <button
+              className="header__search-button"
+              onClick={() => setSearchBar(true)}
+            ></button>
 
             <Search setSearchBar={setSearchBar} searchBar={searchBar} />
           </div>

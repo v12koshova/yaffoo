@@ -10,7 +10,7 @@ import {
 function Cart() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.products);
-  const {products, status} = useSelector((state) => state.shop);
+  const { products, status } = useSelector((state) => state.shop);
   const subtotal = useSelector((state) => state.cart.subtotal);
   const total = useSelector((state) => state.cart.total);
   const isCoupon = useSelector((state) => state.cart.isCoupon);
@@ -18,41 +18,41 @@ function Cart() {
   const couponInputRef = useRef();
 
   const [coupon, setCoupon] = useState({
-    couponState: '',
-    couponMessage: ''
+    couponState: "",
+    couponMessage: "",
   });
 
   useEffect(() => {
     if (isCoupon) {
       setCoupon({
         couponState: "success",
-        couponMessage: 'Coupon has been applied'
+        couponMessage: "Coupon has been applied",
       });
     }
-  }, [])
+  }, []);
 
   function handleCoupon(e) {
     e.preventDefault();
     if (couponInputRef.current.value !== "h") {
       setCoupon({
         couponState: "error",
-        couponMessage: `Coupon "${couponInputRef.current.value}" does not exist!`
+        couponMessage: `Coupon "${couponInputRef.current.value}" does not exist!`,
       });
     } else if (isCoupon && couponInputRef.current.value === "h") {
       setCoupon({
         couponState: "error",
-        couponMessage: "Coupon has already been applied."
+        couponMessage: "Coupon has already been applied.",
       });
     } else if (!isCoupon && couponInputRef.current.value === "h") {
       setCoupon({
         couponState: "success",
-        couponMessage: 'Coupon has been applied'
+        couponMessage: "Coupon has been applied",
       });
       dispatch(applyCoupon());
     } else {
       setCoupon({
         couponState: "error",
-        couponMessage: "Something went wrong, please try again or contact us."
+        couponMessage: "Something went wrong, please try again or contact us.",
       });
     }
   }
@@ -74,11 +74,12 @@ function Cart() {
           <div className="main__wrapper">
             {cart.length ? (
               <div className="cart">
-
-                {coupon.couponState !== '' && (
+                {coupon.couponState !== "" && (
                   <div className="notification">
-                    <p className={`notification__span notification__span--${coupon.couponState}`}>
-                      { coupon.couponMessage }
+                    <p
+                      className={`notification__span notification__span--${coupon.couponState}`}
+                    >
+                      {coupon.couponMessage}
                     </p>
                   </div>
                 )}
@@ -117,38 +118,38 @@ function Cart() {
                         </td>
                         <td>
                           <table>
-                            <tr>
-                              <td colSpan="2">
-                                <Link
-                                  to={`/shop/${product.id}`}
-                                  className="cart-table__link"
-                                >
-                                  {product.title}
-                                </Link>
-                              </td>
-                            </tr>
-                            <tr className="cart-table__element cart-table__element--s">
-                              <td>{product.price}</td>
-                              <td>
-                                <span>x</span>
-                                <input
-                                  type="number"
-                                  max="10"
-                                  min="1"
-                                  value={product.quantity}
-                                  name=""
-                                  id=""
-                                  onChange={(e) =>
-                                    dispatch(
-                                      changeQuantity({
-                                        id: product.id,
-                                        value: e.target.value,
-                                      })
-                                    )
-                                  }
-                                />
-                              </td>
-                            </tr>
+                            <tbody>
+                              <tr>
+                                <td colSpan="2">
+                                  <Link
+                                    to={`/shop/${product.id}`}
+                                    className="cart-table__link"
+                                  >
+                                    {product.title}
+                                  </Link>
+                                </td>
+                              </tr>
+                              <tr className="cart-table__element cart-table__element--s">
+                                <td>{product.price}</td>
+                                <td>
+                                  <span>x</span>
+                                  <input
+                                    type="number"
+                                    max="10"
+                                    min="1"
+                                    value={product.quantity}
+                                    onChange={(e) =>
+                                      dispatch(
+                                        changeQuantity({
+                                          id: product.id,
+                                          value: e.target.value,
+                                        })
+                                      )
+                                    }
+                                  />
+                                </td>
+                              </tr>
+                            </tbody>
                           </table>
                         </td>
 
@@ -161,8 +162,6 @@ function Cart() {
                             max="10"
                             min="1"
                             value={product.quantity}
-                            name=""
-                            id=""
                             onChange={(e) =>
                               dispatch(
                                 changeQuantity({
@@ -252,45 +251,49 @@ function Cart() {
             )}
 
             <aside className="sidebar">
-            {status === 'success' && products.length && (
-              <div className="sidebar__products">
-                <p className="sidebar__title">
-                  <span className="sidebar__title-span">Products</span>
-                </p>
-                <div className="sidebar-products">
-                  {products.map((product) => {
-                    if (product.id <= 3) {
-                      const price =
-                        product.discount === 0
-                          ? product.price
-                          : product.price -
-                            (product.price * product.discount) / 100;
-                      return (
-                        <Link key={`cart-${product.id}`} to={`/shop/${product.id}`} className="sidebar-products__item">
-                          <div className="sidebar-products__item-info">
-                            <h3 className="sidebar-products__item-title title title--xxs">
-                              {product.title}
-                            </h3>
-                            <p className="sidebar-products__item-price">
-                              {product.discount !== 0 && (
-                                <span className="sidebar-products__item-price sidebar-products__item-price--old">
-                                  ${Number(product.price).toFixed(2)}
-                                </span>
-                              )}
-                              ${(+price).toFixed(2)}
-                            </p>
-                          </div>
+              {status === "success" && products.length && (
+                <div className="sidebar__products">
+                  <p className="sidebar__title">
+                    <span className="sidebar__title-span">Products</span>
+                  </p>
+                  <div className="sidebar-products">
+                    {products.map((product) => {
+                      if (product.id <= 3) {
+                        const price =
+                          product.discount === 0
+                            ? product.price
+                            : product.price -
+                              (product.price * product.discount) / 100;
+                        return (
+                          <Link
+                            key={`cart-${product.id}`}
+                            to={`/shop/${product.id}`}
+                            className="sidebar-products__item"
+                          >
+                            <div className="sidebar-products__item-info">
+                              <h3 className="sidebar-products__item-title title title--xxs">
+                                {product.title}
+                              </h3>
+                              <p className="sidebar-products__item-price">
+                                {product.discount !== 0 && (
+                                  <span className="sidebar-products__item-price sidebar-products__item-price--old">
+                                    ${Number(product.price).toFixed(2)}
+                                  </span>
+                                )}
+                                ${(+price).toFixed(2)}
+                              </p>
+                            </div>
 
-                          <div className="sidebar-products__item-img">
-                            <img src={product.image} alt="" />
-                          </div>
-                        </Link>
-                      );
-                    }
-                  })}
+                            <div className="sidebar-products__item-img">
+                              <img src={product.image} alt="" />
+                            </div>
+                          </Link>
+                        );
+                      }
+                    })}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
             </aside>
           </div>
         </div>

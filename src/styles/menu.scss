@@ -21,6 +21,9 @@
         text-align: left;
         padding: 60px 30px 60px 30px;
         box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     &__logo img {

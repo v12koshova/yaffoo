@@ -5,8 +5,7 @@ import Product from "../components/Product";
 
 function Shop() {
   const { products, status } = useSelector((state) => state.shop);
-  console.log(status);
-
+  
   return (
     <main>
       <div className="products">
