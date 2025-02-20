@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/yaffoo/static/css/main.fa9e6ace.css",
-    "main.js": "/yaffoo/static/js/main.e370d1c8.js",
+    "main.css": "/yaffoo/static/css/main.5514c427.css",
+    "main.js": "/yaffoo/static/js/main.99ab9841.js",
     "index.html": "/yaffoo/index.html",
-    "main.fa9e6ace.css.map": "/yaffoo/static/css/main.fa9e6ace.css.map",
-    "main.e370d1c8.js.map": "/yaffoo/static/js/main.e370d1c8.js.map"
+    "main.5514c427.css.map": "/yaffoo/static/css/main.5514c427.css.map",
+    "main.99ab9841.js.map": "/yaffoo/static/js/main.99ab9841.js.map"
   },
   "entrypoints": [
-    "static/css/main.fa9e6ace.css",
-    "static/js/main.e370d1c8.js"
+    "static/css/main.5514c427.css",
+    "static/js/main.99ab9841.js"
   ]
 }
