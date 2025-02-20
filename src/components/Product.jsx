@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../app/features/cartSlice";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Product({ product }) {
     const dispatch = useDispatch()
@@ -21,7 +21,7 @@ function Product({ product }) {
         ${(+price).toFixed(2)}
       </p>
       <Link to={product.id} className="product__img">
-        <img src={product.image} alt="" />
+        <img src={product.image} alt={product.title} />
       </Link>
 
       {

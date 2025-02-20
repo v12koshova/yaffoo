@@ -1,22 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Subscribe from "../components/Subscribe";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { useSelector } from "react-redux";
-import PostDate from "../utils/PostDate";
-import { Autoplay } from "swiper/modules";
+import { initialContactsFormState } from "../constants/constants";
+import Sidebar from "../components/Sidebar";
 
 function Contacts() {
-  const { posts,status } = useSelector((state) => state.posts);
-
-  const initState = {
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  };
-
-  const [data, setData] = useState(initState);
+  const [data, setData] = useState(initialContactsFormState);
   const [errors, setErrors] = useState({});
   const [modalActive, setModalActive] = useState(false);
 
@@ -37,7 +25,7 @@ function Contacts() {
     e.preventDefault();
     const isValid = validate();
     if (isValid) {
-      setData(initState);
+      setData(initialContactsFormState);
       setModalActive(true);
     } else {
       setModalActive(false);
@@ -165,89 +153,7 @@ function Contacts() {
               </form>
             </div>
 
-            <aside className="sidebar">
-            {status === 'success' && posts.length && (
-                <div className="sidebar__featured">
-                  <p className="sidebar__title">
-                    <span className="sidebar__title-span">Featured posts</span>
-                  </p>
-                  <Swiper
-                    className="sidebar-featured-contacts"
-                    loop={true}
-                    slidesPerView={1}
-                    slidesPerGroup={1}
-                    modules={[Autoplay]}
-                    autoplay={{
-                      delay: 5000,
-                      disableOnInteraction: false,
-                    }}
-                    speed={1000}
-                  >
-                    {posts.map((post) => {
-                      if (post.featured) {
-                        return (
-                          <SwiperSlide key={`featured-${post.id}`}>
-                            <Link to={`/post/${post.id}`}>
-                              <div className="sidebar-featured__background">
-                                <img src={post.image} alt="" />
-                              </div>
-                              <div className="sidebar-featured__content">
-                                <p className="sidebar-featured__tag tag">
-                                  {post.category}
-                                </p>
-                                <h3 className="sidebar-featured__title title title--xxs">
-                                  {post.title}
-                                </h3>
-                                <PostDate date={post.date} />
-                              </div>
-                            </Link>
-                          </SwiperSlide>
-                        );
-                      }
-                    })}
-                  </Swiper>
-                </div>
-              )}
-
-              <div className="sidebar__social">
-                <p className="sidebar__title">
-                  <span className="sidebar__title-span">Social icons</span>
-                </p>
-                <div className="sidebar-social social">
-                  <a className="social__link" href="">
-                    <div className="social__item social__item--behance"></div>
-                    <p className="social__text">behance</p>
-                  </a>
-                  <a className="social__link" href="">
-                    <div className="social__item social__item--dribble"></div>
-                    <p className="social__text">dribble</p>
-                  </a>
-                  <a className="social__link" href="">
-                    <div className="social__item social__item--facebook"></div>
-                    <p className="social__text">facebook</p>
-                  </a>
-                  <a className="social__link" href="">
-                    <div className="social__item social__item--instagram"></div>
-                    <p className="social__text">instagram</p>
-                  </a>
-                  <a className="social__link" href="">
-                    <div className="social__item social__item--pinterest"></div>
-                    <p className="social__text">pinterest</p>
-                  </a>
-                  <a className="social__link" href="">
-                    <div className="social__item social__item--twitter"></div>
-                    <p className="social__text">twitter</p>
-                  </a>
-                </div>
-              </div>
-
-              <div className="sidebar__subscribe">
-                <p className="sidebar__title">
-                  <span className="sidebar__title-span">Newsletter</span>
-                </p>
-                <Subscribe />
-              </div>
-            </aside>
+            <Sidebar partial />
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { format } from "date-fns";
 import Sidebar from "../components/Sidebar";
 import { fetchPosts } from "../app/features/postsSlice";
+import Instagram from "../components/Instagram";
 
 function SinglePost() {
   const { posts } = useSelector((state) => state.posts);
@@ -12,48 +13,50 @@ function SinglePost() {
 
   useEffect(() => {
     if (!posts.length) {
-      dispatch(fetchPosts()); // Отримуємо товари, якщо їх немає
+      dispatch(fetchPosts());
     }
   }, [dispatch, posts.length]);
 
-  const singlePost = posts.length
-    ? posts.find((post) => post.id === id)
-    : null;
+  const singlePost = posts.length ? posts.find((post) => post.id === id) : null;
 
   if (!singlePost) {
-    return <p>Loading...</p>; // Уникаємо NaN, поки товар не знайдено
+    return <p>Loading...</p>;
   }
 
   return (
-    <div className="main">
-      <div className="container">
-        <div className="main__wrapper">
-          <div className="single-post">
-            <div className="single-post__info">
-              <p className="single-post__tag tag">{singlePost.category}</p>
-              <h1 className="single-post__title title title--xl">
-                {singlePost.title}
-              </h1>
-              <div className="single-post__breadcrumbs breadcrumbs">
-                <p className="single-post__author">Sophie Blanche</p>
-                <p className="single-post__date date">
-                  {format(singlePost.date, "MMMM d, y").toLocaleUpperCase()}
-                </p>
+    <>
+      <div className="main">
+        <div className="container">
+          <div className="main__wrapper">
+            <div className="single-post">
+              <div className="single-post__info">
+                <p className="single-post__tag tag">{singlePost.category}</p>
+                <h1 className="single-post__title title title--xl">
+                  {singlePost.title}
+                </h1>
+                <div className="single-post__breadcrumbs breadcrumbs">
+                  <p className="single-post__author">Sophie Blanche</p>
+                  <p className="single-post__date date">
+                    {format(singlePost.date, "MMMM d, y").toLocaleUpperCase()}
+                  </p>
+                </div>
+                <div className="single-post__img">
+                  <img src={singlePost.image} alt={singlePost.title} />
+                </div>
               </div>
-              <div className="single-post__img">
-                <img src={singlePost.image} alt="" />
-              </div>
+              <div
+                className="single-post__content"
+                dangerouslySetInnerHTML={{ __html: singlePost.content }}
+              ></div>
             </div>
-            <div
-              className="single-post__content"
-              dangerouslySetInnerHTML={{ __html: singlePost.content }}
-            ></div>
-          </div>
 
-          <Sidebar />
+            <Sidebar />
+          </div>
         </div>
       </div>
-    </div>
+
+      <Instagram />
+    </>
   );
 }
 

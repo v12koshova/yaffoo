@@ -1,12 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
+import SocialMedia from "./SocialMedia";
+import { pages } from "../constants/constants";
 
 function Menu({ state, setMenu, cartCounter }) {
   const handleClose = (e) => {
     if (
       e.target.closest(".side-menu--opened") &&
-      !e.target.classList.contains("side-menu__content") 
+      !e.target.classList.contains("side-menu__content")
     ) {
       setMenu(false);
     }
@@ -27,39 +29,23 @@ function Menu({ state, setMenu, cartCounter }) {
           </Link>
 
           <ul className="side-menu__nav">
-            <li className="side-menu__item">
-              <Link className="side-menu__link" to="/">
-                HOME
-              </Link>
-            </li>
-            <li className="side-menu__item">
-              <Link className="side-menu__link" to="about">
-                ABOUT ME
-              </Link>
-            </li>
-            <li className="side-menu__item">
-              <Link to="shop" className="side-menu__link">
-                SHOP
-              </Link>
-            </li>
-            <li className="side-menu__item">
-              <Link className="side-menu__link" to="contacts">
-                CONTACTS
-              </Link>
-            </li>
+            {Object.keys(pages).map((item) => (
+              <li key={item} className="side-menu__item">
+                <Link className="side-menu__link" to={pages[item]}>
+                  {item}
+                </Link>
+              </li>
+            ))}
           </ul>
 
           <button className="side-menu__button"></button>
         </div>
         <div className="side-menu__bottom links">
-          <div className="side-menu__social social">
-            <a className="social__item social__item--facebook" href=""></a>
-            <a className="social__item social__item--instagram" href=""></a>
-            <a className="social__item social__item--twitter" href=""></a>
-            <a className="social__item social__item--pinterest" href=""></a>
-          </div>
+          <SocialMedia attr="side-menu" />
           <Link to="cart" className="side-menu__cart-link cart-link">
-            <span className="side-menu__cart-count cart-link__count">{cartCounter}</span>
+            <span className="side-menu__cart-count cart-link__count">
+              {cartCounter}
+            </span>
           </Link>
         </div>
       </div>

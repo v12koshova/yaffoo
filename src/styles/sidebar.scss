@@ -1,11 +1,19 @@
 .sidebar {
     text-align: center;
     margin-top: 50px;
+    display: flex;
+    flex-direction: column;
 
     @media only screen and (min-width: 991px) {
         align-self: start;
         margin-top: 0;
         width: 100%;
+    }
+
+    &.sidebar--partial {
+        .sidebar__featured {
+            order: -1;
+        }
     }
 
 

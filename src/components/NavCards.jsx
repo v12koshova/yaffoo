@@ -13,7 +13,7 @@ function NavCards() {
                   width="768"
                   height="584"
                   src={`${process.env.PUBLIC_URL}/assets/about-me.webp`}
-                  alt=""
+                  alt="About me"
                 />
             </div>
           </Link>
@@ -24,7 +24,7 @@ function NavCards() {
                   src={`${process.env.PUBLIC_URL}/assets/waterfall.webp`}
                   width="768"
                   height="584"
-                  alt=""
+                  alt="My store"
                 />
             </div>
           </Link>
@@ -35,7 +35,7 @@ function NavCards() {
                   width="768"
                   height="584"
                   src={`${process.env.PUBLIC_URL}/assets/polaroid.webp`}
-                  alt=""
+                  alt="Instagram"
                 />
             </div>
           </a>

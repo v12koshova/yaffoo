@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { removeItem } from "../app/features/cartSlice";
 import Menu from "./Menu";
 import Search from "./Search";
+import SocialMedia from "./SocialMedia";
+import Navidation from "./Navidation";
 
 function Header() {
   const [menu, setMenu] = useState(false);
@@ -28,40 +30,16 @@ function Header() {
         <div className="header__line header__line--base">
           <h1 className="header__title">Yaffo</h1>
           <nav className="header__menu">
-            <ul className="header__nav nav">
-              <li className="nav__item">
-                <NavLink className="nav__link" to="/">
-                  HOME
-                </NavLink>
-              </li>
-              <li className="nav__item">
-                <NavLink className="nav__link" to="about">
-                  ABOUT ME
-                </NavLink>
-              </li>
-              <li className="nav__item">
-                <NavLink to="shop" className="nav__link">
-                  SHOP
-                </NavLink>
-              </li>
-              <li className="nav__item">
-                <NavLink className="nav__link" to="contacts">
-                  CONTACTS
-                </NavLink>
-              </li>
-            </ul>
+            <Navidation attr="header" />
           </nav>
 
           <div className="header__links links">
-            <div className="header__social social">
-              <a className="social__item social__item--facebook" href=""></a>
-              <a className="social__item social__item--instagram" href=""></a>
-              <a className="social__item social__item--twitter" href=""></a>
-              <a className="social__item social__item--pinterest" href=""></a>
-            </div>
+            <SocialMedia attr="header" />
             <div className="header__cart">
               <Link to="cart" className="header__cart-link cart-link">
-                <span className="header__cart-count cart-link__count">{cartCounter}</span>
+                <span className="header__cart-count cart-link__count">
+                  {cartCounter}
+                </span>
               </Link>
               <div className="cart cart--header">
                 {!cartProducts.length ? (
@@ -85,7 +63,7 @@ function Header() {
                               <img
                                 className="cart-table__item-img"
                                 src={product.image}
-                                alt=""
+                                alt={product.title}
                               />
                             </Link>
                           </td>

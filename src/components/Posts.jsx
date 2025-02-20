@@ -41,7 +41,7 @@ function Posts() {
 
                 {stickyPost.video ? (
                   <Link to={`/post/${stickyPost.id}`} className="post__video">
-                    <img src={stickyPost.image} alt="" />
+                    <img src={stickyPost.image} alt={stickyPost.title} />
                     <video
                       autoPlay
                       muted
@@ -54,7 +54,7 @@ function Posts() {
                   </Link>
                 ) : (
                   <Link to={`/post/${stickyPost.id}`} className="post__img">
-                    <img src={stickyPost.image} alt="" />
+                    <img src={stickyPost.image} alt={stickyPost.title} />
                   </Link>
                 )}
 
@@ -108,7 +108,7 @@ function Posts() {
                             <PostDate date={post.date} />
                           </div>
                           <div className="post__img">
-                            <img src={post.image} alt="" />
+                            <img src={post.image} alt={post.title} />
                           </div>
                         </Link>
                       );

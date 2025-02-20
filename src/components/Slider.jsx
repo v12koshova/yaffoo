@@ -36,7 +36,7 @@ function Slider() {
                     <SwiperSlide key={`slider-${post.id}`}>
                       <Link to={`/post/${post.id}`}>
                         <div className="slide__background">
-                          <img src={post.image} alt="" />
+                          <img src={post.image} alt={post.title} />
                         </div>
                         <div className="slide__content">
                           <p className="slide__tag tag">{post.category}</p>

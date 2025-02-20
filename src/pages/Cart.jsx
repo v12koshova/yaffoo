@@ -6,11 +6,11 @@ import {
   removeItem,
   applyCoupon,
 } from "../app/features/cartSlice";
+import SidebarShop from "../components/SidebarShop";
 
 function Cart() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.products);
-  const { products, status } = useSelector((state) => state.shop);
   const subtotal = useSelector((state) => state.cart.subtotal);
   const total = useSelector((state) => state.cart.total);
   const isCoupon = useSelector((state) => state.cart.isCoupon);
@@ -29,7 +29,7 @@ function Cart() {
         couponMessage: "Coupon has been applied",
       });
     }
-  }, []);
+  }, [isCoupon]);
 
   function handleCoupon(e) {
     e.preventDefault();
@@ -112,7 +112,7 @@ function Cart() {
                             <img
                               className="cart-table__item-img"
                               src={product.image}
-                              alt=""
+                              alt={product.title}
                             />
                           </Link>
                         </td>
@@ -250,51 +250,7 @@ function Cart() {
               </div>
             )}
 
-            <aside className="sidebar">
-              {status === "success" && products.length && (
-                <div className="sidebar__products">
-                  <p className="sidebar__title">
-                    <span className="sidebar__title-span">Products</span>
-                  </p>
-                  <div className="sidebar-products">
-                    {products.map((product) => {
-                      if (product.id <= 3) {
-                        const price =
-                          product.discount === 0
-                            ? product.price
-                            : product.price -
-                              (product.price * product.discount) / 100;
-                        return (
-                          <Link
-                            key={`cart-${product.id}`}
-                            to={`/shop/${product.id}`}
-                            className="sidebar-products__item"
-                          >
-                            <div className="sidebar-products__item-info">
-                              <h3 className="sidebar-products__item-title title title--xxs">
-                                {product.title}
-                              </h3>
-                              <p className="sidebar-products__item-price">
-                                {product.discount !== 0 && (
-                                  <span className="sidebar-products__item-price sidebar-products__item-price--old">
-                                    ${Number(product.price).toFixed(2)}
-                                  </span>
-                                )}
-                                ${(+price).toFixed(2)}
-                              </p>
-                            </div>
-
-                            <div className="sidebar-products__item-img">
-                              <img src={product.image} alt="" />
-                            </div>
-                          </Link>
-                        );
-                      }
-                    })}
-                  </div>
-                </div>
-              )}
-            </aside>
+            <SidebarShop />
           </div>
         </div>
       </div>

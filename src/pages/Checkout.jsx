@@ -1,62 +1,15 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import SidebarShop from "../components/SidebarShop";
+import { initialCheckoutFormState } from "../constants/constants";
 
 function Checkout() {
-  const { products, status } = useSelector((state) => state.shop);
   const cartProducts = useSelector((state) => state.cart.products);
   const subtotal = useSelector((state) => state.cart.subtotal);
   const total = useSelector((state) => state.cart.total);
 
-  const initState = {
-    firstName: {
-      value: "",
-      placeholder: "First name *",
-      type: "text",
-    },
-    lastName: {
-      value: "",
-      placeholder: "Last name *",
-      type: "text",
-    },
-    email: {
-      value: "",
-      placeholder: "Email address *",
-      type: "email",
-    },
-    country: {
-      value: "",
-      placeholder: "Country *",
-      type: "text",
-    },
-    street: {
-      value: "",
-      placeholder: "Street address *",
-      type: "text",
-    },
-    city: {
-      value: "",
-      placeholder: "City *",
-      type: "text",
-    },
-    zip: {
-      value: "",
-      placeholder: "ZIP Code *",
-      type: "text",
-    },
-    phone: {
-      value: "",
-      placeholder: "Phone *",
-      type: "tel",
-    },
-    message: {
-      value: "",
-      placeholder: "Order notes (optional)",
-      type: "text",
-    },
-  };
-
-  const [data, setData] = useState(initState);
+  const [data, setData] = useState(initialCheckoutFormState);
   const [errors, setErrors] = useState({});
   const [modalActive, setModalActive] = useState(false);
 
@@ -192,51 +145,7 @@ function Checkout() {
               </div>
             )}
 
-            <aside className="sidebar">
-              {status === "success" && products.length && (
-                <div className="sidebar__products">
-                  <p className="sidebar__title">
-                    <span className="sidebar__title-span">Products</span>
-                  </p>
-                  <div className="sidebar-products">
-                    {products.map((product) => {
-                      if (product.id <= 3) {
-                        const price =
-                          product.discount === 0
-                            ? product.price
-                            : product.price -
-                              (product.price * product.discount) / 100;
-                        return (
-                          <Link
-                            key={`cart-${product.id}`}
-                            to={`/shop/${product.id}`}
-                            className="sidebar-products__item"
-                          >
-                            <div className="sidebar-products__item-info">
-                              <h3 className="sidebar-products__item-title title title--xxs">
-                                {product.title}
-                              </h3>
-                              <p className="sidebar-products__item-price">
-                                {product.discount !== 0 && (
-                                  <span className="sidebar-products__item-price sidebar-products__item-price--old">
-                                    ${Number(product.price).toFixed(2)}
-                                  </span>
-                                )}
-                                ${(+price).toFixed(2)}
-                              </p>
-                            </div>
-
-                            <div className="sidebar-products__item-img">
-                              <img src={product.image} alt="" />
-                            </div>
-                          </Link>
-                        );
-                      }
-                    })}
-                  </div>
-                </div>
-              )}
-            </aside>
+            <SidebarShop />
           </div>
         </div>
       </div>

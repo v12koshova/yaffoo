@@ -14,14 +14,14 @@ function SingleProduct() {
 
   useEffect(() => {
     if (!products.length) {
-      dispatch(fetchProducts()); // Отримуємо товари, якщо їх немає
+      dispatch(fetchProducts());
     }
   }, [dispatch, products.length]);
   
   const product = products.length ? products.find((p) => p.id === id) : null;
 
   if (!product) {
-    return <p>Loading...</p>; // Уникаємо NaN, поки товар не знайдено
+    return <p>Loading...</p>;
   }
 
   const price =
@@ -37,7 +37,7 @@ function SingleProduct() {
             {product && (
               <>
                 <div className="single-product__image">
-                  <img src={product.image} alt="" />
+                  <img src={product.image} alt={product.title} />
                 </div>
                 <div className="single-product__content">
                   <h1 className="single-product__title title title--m">

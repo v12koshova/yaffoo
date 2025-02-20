@@ -64,7 +64,7 @@ function Search({ searchBar, setSearchBar }) {
                 >
                   <div className="search__info">
                     <div className="search__img">
-                      <img src={item.image} alt="" />
+                      <img src={item.image} alt={item.title} />
                     </div>
                     <div className="search__title">{item.title}</div>
                   </div>

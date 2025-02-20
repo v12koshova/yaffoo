@@ -11,7 +11,6 @@ function Home() {
       <Slider />
       <NavCards />
       <Subscribe />
-
       <Posts />
       <Instagram />
     </main>
